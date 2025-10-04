@@ -1,6 +1,7 @@
 import { HiOutlineBuildingLibrary } from "react-icons/hi2";
-import { tabsData, facultyImage, global } from "../components/tabsData"
 import Tabs from "../components/Tabs";
+
+import { tabsData, facultyImage, global } from "../components/tabsData"
 
 const tabsContent = {
     title: "No Poverty",

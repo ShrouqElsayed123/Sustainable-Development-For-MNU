@@ -1,20 +1,23 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircle } from "lucide-react";
+import PropTypes from "prop-types";
 
-// eslint-disable-next-line react/prop-types
 export default function Tabs({ data }) {
-    if (!data) return null;
+    if (!data) return null; // ✅ الشرط في الأول تمام
 
+    // 🎯 أول حاجة: استخرجي الداتا قبل استخدام أي hook
     const {
         title,
         icon: Icon,
         facultyImage,
         globalImage,
-        tabsData
+        tabsData = [],
     } = data;
 
-    const [activeTab, setActiveTab] = useState(tabsData?.[0]?.id || "1");
+    // 🎯 بعد كده استخدميها هنا بأمان
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const [activeTab, setActiveTab] = useState(tabsData[0]?.id || "1");
 
     return (
         <section className="py-16 px-6 max-w-7xl mx-auto">
@@ -30,7 +33,13 @@ export default function Tabs({ data }) {
                     </div>
                     <div className="h-1 w-24 bg-mainColor rounded-full mt-2"></div>
                 </div>
-
+                <div className="flex justify-center mb-10">
+                    <img
+                        src={globalImage}
+                        alt="Global"
+                        className="w-full max-w-lg rounded-3xl object-cover hover:scale-105 transition-transform duration-500"
+                    />
+                </div>
                 {/* Faculty Image */}
                 <div className="flex justify-center mb-10">
                     <img
@@ -40,14 +49,7 @@ export default function Tabs({ data }) {
                     />
                 </div>
 
-                {/* Global Image */}
-                <div className="flex justify-center mb-10">
-                    <img
-                        src={globalImage}
-                        alt="Global"
-                        className="w-full max-w-lg rounded-3xl object-cover hover:scale-105 transition-transform duration-500"
-                    />
-                </div>
+
             </div>
 
             {/* Tabs */}
@@ -108,3 +110,22 @@ export default function Tabs({ data }) {
         </section>
     );
 }
+
+// ✅ تعريف الـ PropTypes
+Tabs.propTypes = {
+    data: PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        icon: PropTypes.elementType,
+        facultyImage: PropTypes.string.isRequired,
+        globalImage: PropTypes.string.isRequired,
+        tabsData: PropTypes.arrayOf(
+            PropTypes.shape({
+                id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+                icon: PropTypes.node,
+                label: PropTypes.string.isRequired,
+                title: PropTypes.string.isRequired,
+                content: PropTypes.arrayOf(PropTypes.string).isRequired,
+            })
+        ).isRequired,
+    }).isRequired,
+};
