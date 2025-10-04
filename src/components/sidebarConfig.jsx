@@ -17,7 +17,7 @@ export const sidebarMenu = [
     {
         title: "No Poverty",
         single: true,
-        path: "/tabs",
+        path: "/nopoverty",
     },
     {
         title: "Zero Hunger",

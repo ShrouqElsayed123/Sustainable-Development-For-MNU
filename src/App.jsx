@@ -6,8 +6,8 @@ import { createBrowserRouter } from 'react-router-dom';
 import { RouterProvider } from "react-router-dom";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
-import Tabs from "./components/Tabs";
 import ZeroHunger from "./components/ZeroHunger";
+import NoPoverty from "./pages/NoPoverty";
 
 
 
@@ -39,7 +39,7 @@ function App() {
         element: <Layout />,
         children: [
           { index: true, element: <Home /> },
-          { path: "tabs", element: <Tabs /> },
+          { path: "nopoverty", element: <NoPoverty /> },
           { path: "zerohunger", element: <ZeroHunger /> },
         ]
       }

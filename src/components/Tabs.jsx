@@ -1,43 +1,53 @@
 import { useState } from "react";
-import { HiOutlineBuildingLibrary } from "react-icons/hi2";
-import { CheckCircle } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { facultyImage, tabsData, global } from "./tabsData";
+import { CheckCircle } from "lucide-react";
 
-export default function Tabs() {
-    const [activeTab, setActiveTab] = useState("1");
+// eslint-disable-next-line react/prop-types
+export default function Tabs({ data }) {
+    if (!data) return null;
+
+    const {
+        title,
+        icon: Icon,
+        facultyImage,
+        globalImage,
+        tabsData
+    } = data;
+
+    const [activeTab, setActiveTab] = useState(tabsData?.[0]?.id || "1");
 
     return (
         <section className="py-16 px-6 max-w-7xl mx-auto">
             {/* Header */}
             <div className="flex items-center justify-between px-10">
+                {/* Title */}
                 <div className="text-center flex items-center flex-col gap-3 mb-10">
                     <div className="flex items-center justify-center gap-3 cursor-pointer select-none w-fit">
-                        <HiOutlineBuildingLibrary className="w-12 h-12 text-mainColor drop-shadow-md" />
+                        {Icon && <Icon className="w-12 h-12 text-mainColor drop-shadow-md" />}
                         <span className="text-4xl font-bold tracking-wide uppercase text-gray-800">
-                            No Poverty
+                            {title}
                         </span>
                     </div>
                     <div className="h-1 w-24 bg-mainColor rounded-full mt-2"></div>
                 </div>
-                {/* ثابتة مرة واحدة */}
+
+                {/* Faculty Image */}
                 <div className="flex justify-center mb-10">
                     <img
                         src={facultyImage}
-                        alt="Faculty Goals"
+                        alt="Faculty"
                         className="w-full max-w-[300px] rounded-3xl shadow-2xl object-cover hover:scale-105 transition-transform duration-500"
                     />
                 </div>
-                {/* ثابتة مرة واحدة */}
+
+                {/* Global Image */}
                 <div className="flex justify-center mb-10">
                     <img
-                        src={global}
-                        alt="Faculty Goals"
+                        src={globalImage}
+                        alt="Global"
                         className="w-full max-w-lg rounded-3xl object-cover hover:scale-105 transition-transform duration-500"
                     />
                 </div>
-
-
             </div>
 
             {/* Tabs */}
@@ -48,7 +58,7 @@ export default function Tabs() {
                             key={tab.id}
                             onClick={() => setActiveTab(tab.id)}
                             className={`flex items-center justify-start gap-3 p-5 w-full text-base font-semibold transition-all duration-300 border-b md:border-b-0 md:border-l-4
-                                ${activeTab === tab.id
+                ${activeTab === tab.id
                                     ? "text-mainColor bg-white border-mainColor shadow-md"
                                     : "text-gray-600 hover:text-mainColor/80 border-transparent"
                                 }`}
