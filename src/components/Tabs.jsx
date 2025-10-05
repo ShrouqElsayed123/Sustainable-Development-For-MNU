@@ -2,29 +2,30 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircle } from "lucide-react";
 import PropTypes from "prop-types";
+import { NavLink } from "react-router-dom";
 
 export default function Tabs({ data }) {
-    if (!data) return null; // ✅ الشرط في الأول تمام
-
-    // 🎯 أول حاجة: استخرجي الداتا قبل استخدام أي hook
+    // ✅ حتى لو data undefined، نحط قيمة افتراضية لتجنب الأخطاء
     const {
-        title,
+        title = "",
         icon: Icon,
-        main,
-        globalImage,
+        main = "",
+        globalImage = "",
         tabsData = [],
-    } = data;
+    } = data || {};
 
-    // 🎯 بعد كده استخدميها هنا بأمان
-    // eslint-disable-next-line react-hooks/rules-of-hooks
+    // ✅ دايمًا استدعي الـ hook في كل render
     const [activeTab, setActiveTab] = useState(tabsData[0]?.id || "1");
+
+    // ✅ بعد كده ممكن نتحقق
+    if (!data) return null;
 
     return (
         <section className="py-16 px-6 max-w-7xl mx-auto">
             {/* Header */}
-            <div className="flex items-center justify-between px-5">
+            <div className="flex flex-col lg:flex-row items-center justify-between px-5 gap-10">
                 {/* Title */}
-                <div className="text-center flex items-center flex-col gap-3 mb-10">
+                <div className="text-center flex flex-col items-center gap-3 mb-10 lg:mb-0">
                     <div className="flex items-center justify-center gap-3 cursor-pointer select-none w-fit">
                         {Icon && <Icon className="w-12 h-12 text-mainColor drop-shadow-md" />}
                         <span className="text-2xl text-left font-bold tracking-wide uppercase text-gray-800">
@@ -33,23 +34,24 @@ export default function Tabs({ data }) {
                     </div>
                     <div className="h-1 w-24 bg-mainColor rounded-full mt-2"></div>
                 </div>
-                <div className="flex justify-center mb-10">
+
+                {/* Global Image */}
+                <div className="flex justify-center mb-10 lg:mb-0">
                     <img
                         src={globalImage}
                         alt="Global"
                         className="w-full max-w-xs rounded-3xl object-cover hover:scale-105 transition-transform duration-500"
                     />
                 </div>
-                {/* Faculty Image */}
-                <div className="flex justify-center mb-10">
+
+                {/* Faculty Image (حجم ثابت) */}
+                <div className="flex justify-center mb-10 lg:mb-0">
                     <img
                         src={main}
                         alt="Faculty"
-                        className="w-full max-w-[300px] rounded-3xl shadow-2xl object-cover hover:scale-105 transition-transform duration-500"
+                        className="w-[280px] h-[280px] sm:w-[300px] sm:h-[300px] rounded-3xl shadow-2xl object-cover hover:scale-105 transition-transform duration-500"
                     />
                 </div>
-
-
             </div>
 
             {/* Tabs */}
@@ -84,7 +86,7 @@ export default function Tabs({ data }) {
                                     exit={{ opacity: 0, y: -20 }}
                                     transition={{ duration: 0.4 }}
                                 >
-                                    <h3 className="text-2xl font-bold mb-6 text-center md:text-left text-gray-800">
+                                    <h3 className="text-lg font-bold mb-6 text-center md:text-left text-gray-800">
                                         {tab.title}
                                     </h3>
 
@@ -95,12 +97,25 @@ export default function Tabs({ data }) {
                                                 initial={{ opacity: 0, x: -20 }}
                                                 animate={{ opacity: 1, x: 0 }}
                                                 transition={{ delay: i * 0.1 }}
-                                                className="flex items-center gap-4 bg-white shadow-sm hover:shadow-lg border border-gray-100 p-5 rounded-xl transition-all duration-300"
+                                                className="flex items-center justify-between gap-4 bg-white shadow-sm hover:shadow-lg border border-gray-100 p-5 rounded-xl transition-all duration-300"
                                             >
-                                                <CheckCircle className="w-7 h-7 text-mainColor flex-shrink-0" />
-                                                <span className="text-gray-800 leading-relaxed">{goal}</span>
+                                                <div className="flex items-center gap-4">
+                                                    <CheckCircle className="w-7 h-7 text-mainColor flex-shrink-0" />
+                                                    <span className="text-gray-800 leading-relaxed">{goal.text}</span>
+                                                </div>
+                                                {goal.link?.trim() && (
+                                                    <NavLink
+                                                        to={goal.link}
+                                                        target="_blank"
+                                                        className="text-mainColor font-semibold hover:underline"
+                                                    >
+                                                        Visit ↗
+                                                    </NavLink>
+                                                )}
+
                                             </motion.li>
                                         ))}
+
                                     </ul>
                                 </motion.div>
                             ))}
@@ -124,7 +139,13 @@ Tabs.propTypes = {
                 icon: PropTypes.node,
                 label: PropTypes.string.isRequired,
                 title: PropTypes.string.isRequired,
-                content: PropTypes.arrayOf(PropTypes.string).isRequired,
+                content: PropTypes.arrayOf(
+                    PropTypes.shape({
+                        text: PropTypes.string.isRequired,
+                        link: PropTypes.string,
+                    })
+                ).isRequired,
+
             })
         ).isRequired,
     }).isRequired,

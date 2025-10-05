@@ -31,8 +31,8 @@ export default function Sidebar() {
             >
                 {/* ✅ اللوجو */}
                 <div className="flex items-center justify-center h-20 border-b">
-                    <h1 className="text-3xl font-bold tracking-wide">
-                        MNU
+                    <h1 className="text-xl font-bold tracking-wide">
+                        Sustainable Development
                     </h1>
                 </div>
 

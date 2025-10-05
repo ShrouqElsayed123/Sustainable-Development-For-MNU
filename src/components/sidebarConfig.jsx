@@ -15,6 +15,11 @@ export const sidebarMenu = [
     //     ],
     // },
     {
+        title: "Home",
+        single: true,
+        path: "/",
+    },
+    {
         title: "No Poverty",
         single: true,
         path: "/nopoverty",
