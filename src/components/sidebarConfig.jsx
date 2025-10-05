@@ -27,77 +27,77 @@ export const sidebarMenu = [
     {
         title: "Good Health and Well-being",
         single: true,
-        path: "/admin/news",
+        path: "/goodhealth",
     },
     {
         title: "Quality Education",
         single: true,
-        path: "/admin/news",
+        path: "/qualityeducation",
     },
     {
         title: "Gender Equality",
         single: true,
-        path: "/admin/news",
+        path: "/genderequality",
     },
     {
         title: "Clean Water and Sanitation",
         single: true,
-        path: "/admin/news",
+        path: "/cleanwater",
     },
     {
         title: "Affordable and Clean Energy",
         single: true,
-        path: "/admin/news",
+        path: "/affordable",
     },
     {
         title: "Decent Work and Economic Growth",
         single: true,
-        path: "/admin/news",
+        path: "/decentwork",
     },
     {
         title: "Industry, Innovation, and Infrastructure",
         single: true,
-        path: "/admin/news",
+        path: "/industry",
     },
     {
         title: "Reduced Inequalities",
         single: true,
-        path: "/admin/news",
+        path: "/reducedinequalities",
     },
     {
         title: "Sustainable Cities and Communities",
         single: true,
-        path: "/admin/news",
+        path: "/sustainablecities",
     },
     {
         title: "Responsible Consumption and Production",
         single: true,
-        path: "/admin/news",
+        path: "/responsibleconsumption",
     },
     {
         title: "Climate Action",
         single: true,
-        path: "/admin/news",
+        path: "/climateaction",
     },
     {
         title: "Life Below Water",
         single: true,
-        path: "/admin/news",
+        path: "/lifebelowwater",
     },
     {
         title: "Life on Land",
         single: true,
-        path: "/admin/news",
+        path: "/lifeonland",
     },
     {
         title: "Peace, Justice, and Strong Institutions",
         single: true,
-        path: "/admin/news",
+        path: "/peace",
     },
     {
         title: "Partnerships for the Goals",
         single: true,
-        path: "/admin/news",
+        path: "/partnerships",
     },
 
 ];

@@ -1,9 +1,9 @@
-import FacultyGoals from "../components/Tabs";
+// import FacultyGoals from "../components/Tabs";
 
 export default function Home() {
     return (
         <>
-            <FacultyGoals />
+            {/* <FacultyGoals /> */}
 
         </>
     )

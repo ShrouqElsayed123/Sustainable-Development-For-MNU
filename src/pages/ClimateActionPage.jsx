@@ -1,16 +1,15 @@
 import { HiOutlineBuildingLibrary } from "react-icons/hi2";
 import Tabs from "../components/Tabs";
 
-import { tabsData, facultyImage, global } from "../components/tabsData"
+import { ClimateActionData, main, global } from './../components/data/ClimateActionData';
 
 const tabsContent = {
-    title: "No Poverty",
+    title: "Climate Action",
     icon: HiOutlineBuildingLibrary,
-    facultyImage: facultyImage,
+    main: main,
     globalImage: global,
-    tabsData: tabsData,
+    tabsData: ClimateActionData,
 };
-
-export default function NoPoverty() {
+export default function ClimateActionPage() {
     return <Tabs data={tabsContent} />;
 }

@@ -1,7 +1,7 @@
 // src/components/FacultyGoals/tabsData.js
 import { FaBookOpen } from "react-icons/fa";
 
-export const tabsData = [
+export const ResponsibleConsumptionData = [
     {
         id: "1",
         label: "University Policy",
@@ -61,5 +61,5 @@ export const tabsData = [
         ],
     },
 ];
-export const facultyImage = "../../public/images/nopoverty.png";
+export const main = "../../public/images/responsibleconsumption.png";
 export const global = "../../public/images/global.PNG";

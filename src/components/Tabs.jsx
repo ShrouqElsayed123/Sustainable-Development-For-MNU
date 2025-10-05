@@ -10,7 +10,7 @@ export default function Tabs({ data }) {
     const {
         title,
         icon: Icon,
-        facultyImage,
+        main,
         globalImage,
         tabsData = [],
     } = data;
@@ -22,12 +22,12 @@ export default function Tabs({ data }) {
     return (
         <section className="py-16 px-6 max-w-7xl mx-auto">
             {/* Header */}
-            <div className="flex items-center justify-between px-10">
+            <div className="flex items-center justify-between px-5">
                 {/* Title */}
                 <div className="text-center flex items-center flex-col gap-3 mb-10">
                     <div className="flex items-center justify-center gap-3 cursor-pointer select-none w-fit">
                         {Icon && <Icon className="w-12 h-12 text-mainColor drop-shadow-md" />}
-                        <span className="text-4xl font-bold tracking-wide uppercase text-gray-800">
+                        <span className="text-2xl text-left font-bold tracking-wide uppercase text-gray-800">
                             {title}
                         </span>
                     </div>
@@ -37,13 +37,13 @@ export default function Tabs({ data }) {
                     <img
                         src={globalImage}
                         alt="Global"
-                        className="w-full max-w-lg rounded-3xl object-cover hover:scale-105 transition-transform duration-500"
+                        className="w-full max-w-xs rounded-3xl object-cover hover:scale-105 transition-transform duration-500"
                     />
                 </div>
                 {/* Faculty Image */}
                 <div className="flex justify-center mb-10">
                     <img
-                        src={facultyImage}
+                        src={main}
                         alt="Faculty"
                         className="w-full max-w-[300px] rounded-3xl shadow-2xl object-cover hover:scale-105 transition-transform duration-500"
                     />
@@ -116,7 +116,7 @@ Tabs.propTypes = {
     data: PropTypes.shape({
         title: PropTypes.string.isRequired,
         icon: PropTypes.elementType,
-        facultyImage: PropTypes.string.isRequired,
+        main: PropTypes.string.isRequired,
         globalImage: PropTypes.string.isRequired,
         tabsData: PropTypes.arrayOf(
             PropTypes.shape({
