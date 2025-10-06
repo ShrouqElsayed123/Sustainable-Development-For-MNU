@@ -1,5 +1,5 @@
 // src/components/FacultyGoals/tabsData.js
-import { FaBookOpen } from "react-icons/fa";
+import { FaAward, FaBookOpen, FaHandshake, FaRunning } from "react-icons/fa";
 
 export const AffordableData = [
     {
@@ -15,7 +15,7 @@ export const AffordableData = [
     {
         id: "2",
         label: "Activities / Initiatives",
-        icon: <FaBookOpen size={20} />,
+        icon: <FaRunning size={20} />,
         title: "Courses of Level 2",
         content: [
             { text: "We aim to be a leading faculty in education.", link: "https://example.com/vision" },
@@ -24,7 +24,7 @@ export const AffordableData = [
     }, {
         id: "3",
         label: "Partnerships",
-        icon: <FaBookOpen size={20} />,
+        icon: <FaHandshake size={20} />,
         title: "Courses of Level 1",
         content: [
             { text: "We aim to be a leading faculty in education.", link: "https://www.facebook.com/MenoufiaNU.Official/posts/pfbid0RC7kCE7LVKoh1k8JRmGFaeduYKA4Fczv3wZJsEWvdehvEqR4fBfR3YN7ydG6LvAQl?rdid=JkQbLJQZINmRyAWd#" },
@@ -33,7 +33,7 @@ export const AffordableData = [
     }, {
         id: "4",
         label: "Achievements",
-        icon: <FaBookOpen size={20} />,
+        icon: <FaAward size={20} />,
         title: "Courses of Level 1",
         content: [
             { text: "We aim to be a leading faculty in education.", link: "https://example.com/vision" },
@@ -41,5 +41,5 @@ export const AffordableData = [
         ],
     },
 ];
-export const main = "../../public/images/affordable.png";
-export const global = "../../public/images/global.PNG";
+export const main = "/mnu/images/affordable.png";
+export const global = "/mnu/images/global.PNG";

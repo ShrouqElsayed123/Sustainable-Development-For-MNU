@@ -41,5 +41,5 @@ export const SustainableCitiesData = [
         ],
     },
 ];
-export const main = "../../public/images/sustainablecities.png";
-export const global = "../../public/images/global.PNG";
+export const main = "/mnu/images/sustainablecities.png";
+export const global = "/mnu/images/global.PNG";

@@ -67,5 +67,5 @@ export const GoodHealthData = [
         ],
     },
 ];
-export const main = "../../public/images/goodhealth.png";
-export const global = "../../public/images/global.PNG";
+export const main = "/mnu/images/goodhealth.png";
+export const global = "/mnu/images/global.PNG";

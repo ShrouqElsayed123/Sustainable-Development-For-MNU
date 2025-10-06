@@ -41,5 +41,5 @@ export const LifeBelowWaterData = [
         ],
     },
 ];
-export const main = "../../public/images/lifebelowwater.png";
-export const global = "../../public/images/global.PNG";
+export const main = "/mnu/images/lifebelowwater.png";
+export const global = "/mnu/images/global.PNG";

@@ -41,5 +41,5 @@ export const LifeonLandData = [
         ],
     },
 ];
-export const main = "../../public/images/lifeonland.png";
-export const global = "../../public/images/global.PNG";
+export const main = "/mnu/images/lifeonland.png";
+export const global = "/mnu/images/global.PNG";

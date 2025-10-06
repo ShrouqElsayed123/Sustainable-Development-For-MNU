@@ -41,5 +41,5 @@ export const ResponsibleConsumptionData = [
         ],
     },
 ];
-export const main = "../../public/images/responsibleconsumption.png";
-export const global = "../../public/images/global.PNG";
+export const main = "/mnu/images/responsibleconsumption.png";
+export const global = "/mnu/images/global.PNG";

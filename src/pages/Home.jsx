@@ -21,29 +21,35 @@ export default function Home() {
                     {/* section 1 */}
 
                     <div className="max-w-7xl mx-auto flex justify-center items-center flex-col gap-home-section-gap">
-                        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-
-
-                            {/* نهاية العمود الاول  */}
-                            <div className="text-gray-800 dark:text-gray-200 space-y-4">
-                                <p className="text-lg text-gray-800 font-medium">
-                                    Menoufia National University places sustainability at the heart of its vision, mission, education, research, and community service, in alignment with the United Nations Sustainable Development Goals and Egypt’s Vision 2030, striving for a more prosperous and equitable future for current and future generation
-                                </p>
-                            </div>
-                            {/* العمود الثاني - النص */}
-
-
-
-                            <div className="space-y-4 w-full">
+                        <div className="max-w-6xl mx-auto grid grid-cols-1 gap-8 items-center">
+                            {/* الصورة */}
+                            <div className="space-y-4 w-full flex justify-center">
                                 <img
                                     src={goals}
                                     alt="Main"
-                                    className="w-full rounded-xl shadow-md"
+                                    className="w-3/4 rounded-xl shadow-md"
                                 />
                             </div>
-                        </div>
 
+                            {/* الكارد للنص */}
+                            <div className="flex justify-center">
+                                <div className="bg-gradient-to-br from-mainColor/10 to-white dark:from-mainColor/20 dark:to-gray-900 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 p-6 sm:p-8 max-w-3xl text-center hover:shadow-2xl transition-all duration-300">
+
+                                    {/* العنوان */}
+                                    <h2 className="text-2xl sm:text-3xl font-bold text-mainColor dark:text-mainColor-light mb-4 relative inline-block">
+                                        Sustainability Vision
+                                        <span className="absolute left-1/2 -bottom-2 -translate-x-1/2 w-16 h-1 bg-mainColor rounded-full"></span>
+                                    </h2>
+
+                                    {/* النص */}
+                                    <p className="text-lg sm:text-xl text-gray-800 dark:text-gray-200 font-medium italic leading-relaxed mt-6">
+                                        Menoufia National University places sustainability at the heart of its vision, mission, education, research, and community service, in alignment with the United Nations Sustainable Development Goals and Egypt’s Vision 2030, striving for a more prosperous and equitable future for current and future generations.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
                     {/* section 2 */}
                     <div className="max-w-7xl mx-auto flex justify-center items-center flex-col gap-home-section-gap">
                         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">

@@ -67,3 +67,37 @@ body {
 .animation-delay-1500 {
   animation-delay: 1.5s;
 }
+
+
+/* ✅ Scrollbar يظهر تدريجيًا عند التمرير أو الـ hover */
+.scrollbar-fade {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 transparent;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+}
+
+.scrollbar-fade::-webkit-scrollbar {
+  width: 6px;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.scrollbar-fade::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-fade::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;
+  border-radius: 10px;
+  opacity: 0;
+  /* ✅ مخفي افتراضيًا */
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* ✅ يظهر عند التمرير أو التفاعل */
+.scrollbar-fade:hover::-webkit-scrollbar-thumb,
+.scrollbar-fade:active::-webkit-scrollbar-thumb,
+.scrollbar-fade:focus::-webkit-scrollbar-thumb {
+  opacity: 1;
+  /* ✅ fade-in */
+}

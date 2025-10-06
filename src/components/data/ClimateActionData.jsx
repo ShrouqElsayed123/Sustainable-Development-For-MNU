@@ -41,5 +41,5 @@ export const ClimateActionData = [
         ],
     },
 ];
-export const main = "../../public/images/climateaction.png";
-export const global = "../../public/images/global.PNG";
+export const main = "/mnu/images/climateaction.png";
+export const global = "/mnu/images/global.PNG";

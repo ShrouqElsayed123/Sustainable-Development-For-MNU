@@ -41,5 +41,5 @@ export const IndustryData = [
         ],
     },
 ];
-export const main = "../../public/images/industry.jpg";
-export const global = "../../public/images/global.PNG";
+export const main = "/mnu/images/industry.jpg";
+export const global = "/mnu/images/global.PNG";

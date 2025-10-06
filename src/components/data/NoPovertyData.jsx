@@ -41,5 +41,5 @@ export const NoPovertyData = [
         ],
     },
 ];
-export const main = "../../public/images/nopoverty.png";
-export const global = "../../public/images/global.PNG";
+export const main = "/mnu/images/nopoverty.png";
+export const global = "/mnu/images/global.PNG";

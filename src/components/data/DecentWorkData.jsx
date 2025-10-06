@@ -41,5 +41,5 @@ export const DecentWorkData = [
         ],
     },
 ];
-export const main = "../../public/images/decentwork.png";
-export const global = "../../public/images/global.PNG";
+export const main = "/mnu/images/decentwork.png";
+export const global = "/mnu/images/global.PNG";

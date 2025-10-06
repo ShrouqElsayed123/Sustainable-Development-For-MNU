@@ -16,7 +16,7 @@ export default function DashboardLayout() {
 
 
                     {/* Content */}
-                    <main className="flex-1 p-6 pt-0 overflow-y-auto overflow-hidden bg-white m-5">
+                    <main className="flex-1 p-6 pt-0 overflow-y-auto overflow-hidden bg-white m-5 scrollbar-fade">
                         <GoalsBar />
                         <Outlet></Outlet>
                     </main>

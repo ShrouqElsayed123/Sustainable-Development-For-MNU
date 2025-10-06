@@ -41,5 +41,5 @@ export const CleanWaterData = [
         ],
     },
 ];
-export const main = "../../public/images/cleanwater.png";
-export const global = "../../public/images/global.PNG";
+export const main = "/mnu/images/cleanwater.png";
+export const global = "/mnu/images/global.PNG";

@@ -41,5 +41,5 @@ export const PartnershipsData = [
         ],
     },
 ];
-export const main = "../../public/images/partnerships.png";
-export const global = "../../public/images/global.PNG";
+export const main = "/mnu/images/partnerships.png";
+export const global = "/mnu/images/global.PNG";

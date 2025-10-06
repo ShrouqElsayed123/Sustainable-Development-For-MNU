@@ -41,5 +41,5 @@ export const PeaceData = [
         ],
     },
 ];
-export const main = "../../public/images/peace.png";
-export const global = "../../public/images/global.PNG";
+export const main = "/mnu/images/peace.png";
+export const global = "/mnu/images/global.PNG";

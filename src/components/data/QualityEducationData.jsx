@@ -59,5 +59,6 @@ export const QualityEducationData = [
         ],
     },
 ];
-export const main = "../../public/images/qualityeducation.png";
-export const global = "../../public/images/global.PNG";
+
+export const main = "/mnu/images/qualityeducation.png";
+export const global = "/mnu/images/global.PNG";

@@ -41,5 +41,5 @@ export const ZeroHungerData = [
         ],
     },
 ];
-export const main = "../../public/images/zerohunger.jpg";
-export const global = "../../public/images/global.PNG";
+export const main = "/mnu/images/zerohunger.jpg";
+export const global = "/mnu/images/global.PNG";
