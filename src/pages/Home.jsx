@@ -1,9 +1,12 @@
 // import FacultyGoals from "../components/Tabs";
-import img1 from '../../public/images/img1.jfif'
-import img2 from '../../public/images/img2.jfif'
+import green from '../../public/images/green.PNG'
+import office2 from '../../public/images/office2.jpg'
 import img3 from '../../public/images/img3.jfif'
+import bg from '../../public/images/bg1.jpeg'
 import goals from '../../public/images/goals.jpg'
 import { BookOpen } from "lucide-react";
+import { motion } from "framer-motion";
+import { NavLink } from 'react-router-dom';
 
 export default function Home() {
     return (
@@ -13,31 +16,47 @@ export default function Home() {
 
                 <section
 
-                    className="  transition-colors duration-300 my-home-section-margin p-home-section-padding space-y-5"
+                    className="  transition-colors duration-300 my-home-section-margin p-home-section-padding "
 
                     data-aos="fade-up"
                 >
 
+                    <motion.h1
+                        className="text-center text-5xl font-extrabold bg-gradient-to-r  mb-10  bg-clip-text"
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 1 }}
+                    >
+
+                        Sustainable <span className="text-mainColor">Development</span>
+                        <div className="mt-3 mx-auto h-1 w-32 bg-gradient-to-r from-mainColor to-green-400 rounded-full"></div>
+
+
+                    </motion.h1>
+
+
                     {/* section 1 */}
 
-                    <div className="max-w-7xl mx-auto flex justify-center items-center flex-col gap-home-section-gap">
-                        <div className="max-w-6xl mx-auto grid grid-cols-1 gap-8 items-center">
-                            {/* الصورة */}
-                            <div className="space-y-4 w-full flex justify-center">
-                                <img
-                                    src={goals}
-                                    alt="Main"
-                                    className="w-3/4 rounded-xl shadow-md"
-                                />
-                            </div>
+                    <div className='relative w-full h-[500px] flex items-center justify-center text-center mb-20'>
+                        <div
+                            className='absolute inset-0 bg-cover bg-center'
+                            style={{ backgroundImage: `url(${bg})` }}
+                        ></div>
 
-                            {/* الكارد للنص */}
+                        {/* overlay رمادي */}
+                        {/* <div className='absolute inset-0 bg-gray-800/10'></div> */}
+
+                        <div className='relative z-10'>
+
+
                             <div className="flex justify-center">
-                                <div className="bg-gradient-to-br from-mainColor/10 to-white dark:from-mainColor/20 dark:to-gray-900 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 p-6 sm:p-8 max-w-3xl text-center hover:shadow-2xl transition-all duration-300">
+                                <div className="bg-gradient-to-br from-[#1e8c5c40] to-white dark:from-mainColor-[#1e8c5c40] dark:to-gray-900 
+                                rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 p-6 sm:p-8 max-w-3xl text-center 
+                                hover:shadow-2xl transition-all duration-300">
 
                                     {/* العنوان */}
-                                    <h2 className="text-2xl sm:text-3xl font-bold text-mainColor dark:text-mainColor-light mb-4 relative inline-block">
-                                        Sustainability Vision
+                                    <h2 className="text-2xl sm:text-3xl font-bold  dark:text-mainColor-light mb-4 relative inline-block">
+                                        Sustainability <span className='text-mainColor'>Vision</span>
                                         <span className="absolute left-1/2 -bottom-2 -translate-x-1/2 w-16 h-1 bg-mainColor rounded-full"></span>
                                     </h2>
 
@@ -50,31 +69,25 @@ export default function Home() {
                         </div>
                     </div>
 
-                    {/* section 2 */}
-                    <div className="max-w-7xl mx-auto flex justify-center items-center flex-col gap-home-section-gap">
+
+
+
+
+
+                    {/* section 2*/}
+                    <div className="max-w-7xl mx-auto flex justify-center items-center flex-col mt-20 gap-home-section-gap">
                         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                             {/* العمود الأول - الصور */}
                             <div className="space-y-4">
                                 {/* الصورة الأولى - صف كامل */}
                                 <img
-                                    src={img1}
+                                    src={goals}
                                     alt="Main"
                                     className="w-full rounded-xl shadow-md"
                                 />
 
                                 {/* الصف الثاني - صورتين جنب بعض */}
-                                <div className="grid grid-cols-2 gap-4">
-                                    <img
-                                        src={img2}
-                                        alt="Sub 1"
-                                        className="w-full h-full rounded-xl shadow-md"
-                                    />
-                                    <img
-                                        src={img3}
-                                        alt="Sub 2"
-                                        className="w-full h-full rounded-xl shadow-md"
-                                    />
-                                </div>
+
                             </div>
                             {/* نهاية العمود الاول  */}
                             {/* العمود الثاني - النص */}
@@ -104,12 +117,79 @@ export default function Home() {
 
 
 
-                </section>
+                    {/* section 3*/}
+
+                    <div className="max-w-7xl mx-auto flex justify-center items-center flex-col mt-20 gap-home-section-gap">
+                        <h1 className='text-2xl font-semibold'>Main Sustainability- <span className='text-mainColor'>Related Units:</span></h1>
+                        <div className="mt-1 mx-auto h-1 w-32 bg-gradient-to-r from-mainColor to-green-400 rounded-full"></div>
+
+                        <p className='text-gray-600 italic w-3/4 text-lg text-center'>Menoufia National University is committed to promoting sustainability through its specialized centers and committees that support environmental, social, and governance initiatives across campus. These units play a key role in implementing the University’s Sustainability Strategy and aligning with the UN Sustainable Development Goals (SDGs). </p>
+
+
+                        <div className="max-w-5xl mx-auto px-4 py-10">
+                            {/* Wrapper */}
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                {/* Section 1 */}
+                                <div className="flex flex-col items-center text-center bg-white shadow-lg rounded-2xl p-6 hover:shadow-xl transition">
+                                    <div className="w-full aspect-[16/9] overflow-hidden rounded-xl mb-4">
+                                        <img
+                                            src={green}
+                                            alt="Section 1"
+                                            className="w-full h-full object-contain hover:scale-105 transition duration-300"
+                                        />
+                                    </div>
+                                    <h2 className="text-2xl font-bold text-mainColor mb-2">
+                                        The Green Office (Sustainability Office)
+                                    </h2>
+                                    <p className="text-gray-600">
+                                        Responsible for coordinating sustainability initiatives, monitoring environmental performance, and promoting green practices across all university facilities.
+                                    </p>
+                                </div>
+
+                                {/* Section 2 */}
+                                <div className="flex flex-col items-center text-center bg-white shadow-lg rounded-2xl p-6 hover:shadow-xl transition">
+                                    <div className="w-full aspect-[16/9] overflow-hidden rounded-xl mb-4">
+                                        <img
+                                            src={office2}
+                                            alt="Section 2"
+                                            className="w-full h-full object-contain hover:scale-105 transition duration-300"
+                                        />
+                                    </div>
+                                    <h2 className="text-2xl font-bold text-mainColor mb-2">
+                                        Crisis and Disaster Management Unit
+                                    </h2>
+                                    <p className="text-gray-600">
+                                        Works on risk assessment, emergency preparedness, and resilience planning to ensure safety and sustainability in response to natural and man-made disasters.                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
 
 
 
 
-            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </section >
+
+
+
+
+            </div >
         </>
     )
 }

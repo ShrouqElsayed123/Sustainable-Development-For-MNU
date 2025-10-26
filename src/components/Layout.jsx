@@ -1,6 +1,5 @@
 import { Outlet } from 'react-router-dom'
 import Sidebar from './Sidebar'
-import GoalsBar from './GoalsBar'
 
 export default function DashboardLayout() {
     return (
@@ -17,7 +16,7 @@ export default function DashboardLayout() {
 
                     {/* Content */}
                     <main className="flex-1 p-6 pt-0 overflow-y-auto overflow-hidden bg-white m-5 scrollbar-fade">
-                        <GoalsBar />
+
                         <Outlet></Outlet>
                     </main>
                 </div>
