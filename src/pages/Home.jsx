@@ -1,14 +1,18 @@
 // import FacultyGoals from "../components/Tabs";
-import green from '../../public/images/green.PNG'
-import office2 from '../../public/images/office2.jpg'
-import img3 from '../../public/images/img3.jfif'
-import bg from '../../public/images/bg1.jpeg'
-import goals from '../../public/images/goals.jpg'
+// import green from '../../public/images/green.PNG'
+// import office2 from '../../public/images/office2.jpg'
+// import bg from '../../public/images/bg1.jpeg'
+// import goals from '../../public/images/goals.jpg'
 import { BookOpen } from "lucide-react";
 import { motion } from "framer-motion";
-import { NavLink } from 'react-router-dom';
+import PhotoSlider from "../components/PhotoSlider";
 
 export default function Home() {
+    const green = '/mnu/images/green.PNG'
+    const bg = '/mnu/images/bg1.jpeg'
+    const goals = '/mnu/images/goals.jpg'
+    const office2 = '/mnu/public/images/office2.jpg'
+
     return (
         <>
             <div className='  overflow-hidden'>
@@ -116,7 +120,7 @@ export default function Home() {
                     </div>
 
 
-
+                    <PhotoSlider />
                     {/* section 3*/}
 
                     <div className="max-w-7xl mx-auto flex justify-center items-center flex-col mt-20 gap-home-section-gap">

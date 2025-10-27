@@ -15,11 +15,20 @@ export const CleanWaterData = [
     {
         id: "2",
         label: "Activities / Initiatives",
-        icon: <FaBookOpen size={20} />,
-        title: "Courses of Level 2",
+        title: "Activities and Initiatives Details",
         content: [
-            { text: "We aim to be a leading faculty in education.", link: "https://example.com/vision" },
-            { text: "Our programs support innovation.", link: "https://example.com/innovation" },
+            {
+                text: "Health Awareness Campaign 2024",
+                pdf: "/mnu/pdfs/health-awareness.pdf",
+            },
+            {
+                text: "Community Volunteering Program",
+                pdf: "/mnu/pdfs/community-volunteering.pdf",
+            },
+            {
+                text: "Sustainability Week Activities",
+                pdf: "/mnu/pdfs/sustainability-week.pdf",
+            },
         ],
     }, {
         id: "3",

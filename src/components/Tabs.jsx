@@ -2,9 +2,9 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircle } from "lucide-react";
 import PropTypes from "prop-types";
-import { NavLink } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
 
-// 🎨 استيراد الأيقونات اللي هتستخدمها
+// 🎨 استيراد الأيقونات
 import { FaBookOpen, FaUsers, FaHandshake, FaTrophy } from "react-icons/fa";
 
 export default function Tabs({ data }) {
@@ -20,7 +20,6 @@ export default function Tabs({ data }) {
 
     if (!data) return null;
 
-    // ✅ Array فيها الأيقونات الخاصة بالتبويبات بالترتيب
     const tabIcons = [FaBookOpen, FaUsers, FaHandshake, FaTrophy];
 
     return (
@@ -65,8 +64,7 @@ export default function Tabs({ data }) {
                 {/* ===== Tab Buttons ===== */}
                 <div className="flex flex-wrap md:flex-col bg-gradient-to-b from-gray-50 to-gray-100 border-b md:border-b-0 md:border-r border-gray-200">
                     {tabsData.map((tab, index) => {
-                        const TabIcon = tabIcons[index % tabIcons.length]; // 👈 توزيع الأيقونات حسب الترتيب
-
+                        const TabIcon = tabIcons[index % tabIcons.length];
                         return (
                             <button
                                 key={tab.id}
@@ -77,8 +75,7 @@ export default function Tabs({ data }) {
                                         : "text-gray-600 hover:text-mainColor/80 border-transparent"
                                     }`}
                             >
-                                {/* 👇 الأيقونة من المصفوفة */}
-                                <TabIcon className="text-lg sm:text-2xl " />
+                                <TabIcon className="text-lg sm:text-2xl" />
                                 <span>{tab.label}</span>
                             </button>
                         );
@@ -109,23 +106,18 @@ export default function Tabs({ data }) {
                                                 initial={{ opacity: 0, x: -20 }}
                                                 animate={{ opacity: 1, x: 0 }}
                                                 transition={{ delay: i * 0.1 }}
-                                                className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white shadow-sm hover:shadow-lg border border-gray-100 p-5 rounded-xl transition-all duration-300"
                                             >
-                                                <div className="flex items-center gap-4">
-                                                    <CheckCircle className="w-6 h-6 sm:w-7 sm:h-7 text-mainColor flex-shrink-0" />
-                                                    <span className="text-gray-800 leading-relaxed text-sm sm:text-base">
+                                                <a
+                                                    href={goal.pdf || goal.link}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="flex items-center gap-3 bg-white border border-gray-100 rounded-xl p-5 shadow-sm hover:shadow-md transition-all duration-300 group"
+                                                >
+                                                    <CheckCircle className="w-6 h-6 text-mainColor flex-shrink-0 transition-transform duration-300 group-hover:scale-110" />
+                                                    <span className="text-gray-800 text-sm sm:text-base group-hover:text-mainColor transition-colors duration-300">
                                                         {goal.text}
                                                     </span>
-                                                </div>
-                                                {goal.link?.trim() && (
-                                                    <NavLink
-                                                        to={goal.link}
-                                                        target="_blank"
-                                                        className="text-mainColor font-semibold hover:underline text-sm sm:text-base"
-                                                    >
-                                                        Visit ↗
-                                                    </NavLink>
-                                                )}
+                                                </a>
                                             </motion.li>
                                         ))}
                                     </ul>
@@ -147,15 +139,17 @@ Tabs.propTypes = {
         globalImage: PropTypes.string.isRequired,
         tabsData: PropTypes.arrayOf(
             PropTypes.shape({
-                id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+                id: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+                    .isRequired,
                 label: PropTypes.string.isRequired,
                 title: PropTypes.string.isRequired,
                 content: PropTypes.arrayOf(
                     PropTypes.shape({
                         text: PropTypes.string.isRequired,
                         link: PropTypes.string,
+                        pdf: PropTypes.string, // 👈 لكل activity PDF خاص بيه
                     })
-                ).isRequired,
+                ),
             })
         ).isRequired,
     }).isRequired,
