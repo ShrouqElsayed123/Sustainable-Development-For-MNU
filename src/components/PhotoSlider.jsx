@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 import { Trans, useTranslation } from "react-i18next";
-import { BookOpen, MoveUpRight, ArrowRight, MoveUpLeft } from "lucide-react";
+import { BookOpen, MoveUpRight, MoveUpLeft } from "lucide-react";
 // import img6 from "../../assets/images/slider-image-3.jfif";
 import { NavLink } from 'react-router-dom';
 
@@ -12,10 +12,12 @@ const MotionImg = motion.img;
 
 const PhotoSlider = () => {
     const [positionIndexes, setPositionIndexes] = useState([0, 1, 2, 3, 4]);
-    const green = '/mnu/images/green.PNG'
-    const bg = '/mnu/images/bg1.jpeg'
-    const goals = '/mnu/images/goals.jpg'
-    const office2 = '/mnu/public/images/office2.jpg'
+    const sliderimg1 = '/mnu/images/sliderimg1.jpeg'
+    const sliderimg2 = '/mnu/images/sliderimg2.jpeg'
+    const sliderimg3 = '/mnu/images/sliderimg3.jpeg'
+    const sliderimg4 = '/mnu/images/sliderimg4.jpeg'
+    const sliderimg5 = '/mnu/images/sliderimg5.jpeg'
+
     // ✅ Auto change every 3 seconds
     useEffect(() => {
         const interval = setInterval(() => {
@@ -27,7 +29,7 @@ const PhotoSlider = () => {
         return () => clearInterval(interval); // تنظيف الـ interval
     }, []);
 
-    const images = [green, bg, goals, office2];
+    const images = [sliderimg1, sliderimg2, sliderimg3, sliderimg4, sliderimg5];
 
     const positions = ["center", "left1", "left", "right", "right1"];
 

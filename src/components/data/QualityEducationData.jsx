@@ -1,21 +1,16 @@
 // src/components/FacultyGoals/tabsData.js
-import { FaBookOpen } from "react-icons/fa";
 
 export const QualityEducationData = [
     {
         id: "1",
         label: "University Policy",
-        icon: <FaBookOpen size={20} />,
-        title: "The University is committed to providing inclusive, high-quality education by:",
+        title:
+            "As part of its commitment to the UN Sustainable Development Goals, the university adopts a comprehensive policy to promote health and well-being among students, staff, and the wider community through:",
         content: [
-            { text: "Supporting research in early years and lifelong learning.", link: "" },
-            { text: "Preparing graduates with teaching qualifications.", link: "" },
-            { text: "Enabling first-generation students to access higher education.", link: "" },
-            { text: "Integrating sustainability topics into curricula.", link: "" },
-            { text: "Allocating funds for sustainability research.", link: "" },
-            { text: "Organizing sustainability-related events and community services with student involvement.", link: "" },
-            { text: "Establishing a unit to coordinate sustainability and monitor performance", link: "" },
-
+            {
+                text: "List of  Courses Related to Sustainability",
+                pdf: "/mnu/pdfs/Policy/SDG4/List of  Courses Related to Sustainability.pdf"
+            },
 
         ],
     },
@@ -24,37 +19,50 @@ export const QualityEducationData = [
         label: "Activities / Initiatives",
         title: "Activities and Initiatives Details",
         content: [
+
+            {
+                text: "(2023-2024) Community Outreach Activities",
+                pdf: "/mnu/pdfs/Activities/SDG4/(2023-2024) Community Outreach Activities.pdf"
+            },
             {
                 text: "(2023-2024) University Activities and Initiatives to Promote Quality Education",
-                pdf: "/mnu/pdfs/(2023-2024) University Activities and Initiatives to Promote Quality Education.pdf",
+                pdf: "/mnu/pdfs/Activities/SDG4/(2023-2024) University Activities and Initiatives to Promote Quality Education.pdf"
             },
             {
-                text: "(2024–2025) University Activities and Initiatives to Promote Quality Education  ",
-                pdf: "/mnu/pdfs/(2024–2025) University Activities and Initiatives to Promote Quality Education.pdf",
+                text: "(2024–2025) University Activities and Initiatives to Promote Quality Education",
+                pdf: "/mnu/pdfs/Activities/SDG4/(2024–2025) University Activities and Initiatives to Promote Quality Education.pdf"
+            },
+            {
+                text: "(2024-2025) Community Outreach Activities",
+                pdf: "/mnu/pdfs/Activities/SDG4/(2024-2025) Community Outreach Activities.pdf"
+            },
+            {
+                text: "Activities organized by student organizations related to sustainability ",
+                pdf: "/mnu/pdfs/Activities/SDG4/Activities organized by student organizations related to sustainability .pdf"
             },
 
         ],
-    }, {
+    },
+    {
         id: "3",
         label: "Partnerships",
-        icon: <FaBookOpen size={20} />,
-        title: "",
+        title: "title",
         content: [
-            { text: "Dar Al-Rahma Orphanage & Institutional Nursery (Shibin El-Kom) ", link: "" },
-            { text: "National Authority for Quality Assurance and Accreditation of Education (NAQAAE) ", link: "" },
-            { text: "Arab Youth & Environment Union (League of Arab States / Arab Ministers of Youth Council) ", link: "" },
-            { text: "Egyptian Ministry of Youth and Sports ", link: "" },
-
+            {
+                text: "",
+                link: ""
+            },
+            {
+                text: "",
+                link: ""
+            },
         ],
-    }, {
+    },
+    {
         id: "4",
         label: "Achievements",
-        icon: <FaBookOpen size={20} />,
-        title: "Courses of Level 1",
-        content: [
-            { text: "We aim to be a leading faculty in education.", link: "" },
-            { text: "Our programs support innovation.", link: "0" },
-        ],
+        title: "University Achievements",
+        image: "/mnu/images/achievements/SDG4.jpeg", // ✅ الصورة اللي هتظهر بدل النصوص
     },
 ];
 

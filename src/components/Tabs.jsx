@@ -2,9 +2,6 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircle } from "lucide-react";
 import PropTypes from "prop-types";
-// import { NavLink } from "react-router-dom";
-
-// 🎨 استيراد الأيقونات
 import { FaBookOpen, FaUsers, FaHandshake, FaTrophy } from "react-icons/fa";
 
 export default function Tabs({ data }) {
@@ -48,11 +45,11 @@ export default function Tabs({ data }) {
                     />
                 </div>
 
-                {/* GOAL Image */}
+                {/* Main Image */}
                 <div className="flex justify-center order-3">
                     <img
                         src={main}
-                        alt="GOAL"
+                        alt="Main"
                         className="w-[200px] h-[200px] sm:w-[260px] sm:h-[260px] lg:w-[300px] lg:h-[300px] rounded-3xl shadow-2xl object-cover hover:scale-105 transition-transform duration-500"
                     />
                 </div>
@@ -60,7 +57,6 @@ export default function Tabs({ data }) {
 
             {/* ===== Tabs Container ===== */}
             <div className="flex flex-col md:flex-row rounded-2xl overflow-hidden shadow-xl bg-white/80 backdrop-blur-sm border border-gray-100">
-
                 {/* ===== Tab Buttons ===== */}
                 <div className="flex flex-wrap md:flex-col bg-gradient-to-b from-gray-50 to-gray-100 border-b md:border-b-0 md:border-r border-gray-200">
                     {tabsData.map((tab, index) => {
@@ -99,28 +95,39 @@ export default function Tabs({ data }) {
                                         {tab.title}
                                     </h3>
 
-                                    <ul className="space-y-5">
-                                        {tab.content.map((goal, i) => (
-                                            <motion.li
-                                                key={i}
-                                                initial={{ opacity: 0, x: -20 }}
-                                                animate={{ opacity: 1, x: 0 }}
-                                                transition={{ delay: i * 0.1 }}
-                                            >
-                                                <a
-                                                    href={goal.pdf || goal.link}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    className="flex items-center gap-3 bg-white border border-gray-100 rounded-xl p-5 shadow-sm hover:shadow-md transition-all duration-300 group"
+                                    {/* ✅ لو في صورة نعرضها بدل القايمة */}
+                                    {tab.image ? (
+                                        <div className="flex justify-center">
+                                            <img
+                                                src={tab.image}
+                                                alt={tab.label}
+                                                className="rounded-2xl shadow-lg max-w-full sm:max-w-md hover:scale-105 transition-transform duration-500"
+                                            />
+                                        </div>
+                                    ) : (
+                                        <ul className="space-y-5">
+                                            {tab.content?.map((goal, i) => (
+                                                <motion.li
+                                                    key={i}
+                                                    initial={{ opacity: 0, x: -20 }}
+                                                    animate={{ opacity: 1, x: 0 }}
+                                                    transition={{ delay: i * 0.1 }}
                                                 >
-                                                    <CheckCircle className="w-6 h-6 text-mainColor flex-shrink-0 transition-transform duration-300 group-hover:scale-110" />
-                                                    <span className="text-gray-800 text-sm sm:text-base group-hover:text-mainColor transition-colors duration-300">
-                                                        {goal.text}
-                                                    </span>
-                                                </a>
-                                            </motion.li>
-                                        ))}
-                                    </ul>
+                                                    <a
+                                                        href={goal.pdf || goal.link}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="flex items-center gap-3 bg-white border border-gray-100 rounded-xl p-5 shadow-sm hover:shadow-md transition-all duration-300 group"
+                                                    >
+                                                        <CheckCircle className="w-6 h-6 text-mainColor flex-shrink-0 transition-transform duration-300 group-hover:scale-110" />
+                                                        <span className="text-gray-800 text-sm sm:text-base group-hover:text-mainColor transition-colors duration-300">
+                                                            {goal.text}
+                                                        </span>
+                                                    </a>
+                                                </motion.li>
+                                            ))}
+                                        </ul>
+                                    )}
                                 </motion.div>
                             ))}
                     </AnimatePresence>
@@ -143,11 +150,12 @@ Tabs.propTypes = {
                     .isRequired,
                 label: PropTypes.string.isRequired,
                 title: PropTypes.string.isRequired,
+                image: PropTypes.string, // ✅ خاصية جديدة لو التاب صورة فقط
                 content: PropTypes.arrayOf(
                     PropTypes.shape({
                         text: PropTypes.string.isRequired,
                         link: PropTypes.string,
-                        pdf: PropTypes.string, // 👈 لكل activity PDF خاص بيه
+                        pdf: PropTypes.string,
                     })
                 ),
             })
