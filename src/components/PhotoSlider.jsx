@@ -1,105 +1,72 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
-import { Trans, useTranslation } from "react-i18next";
-import { BookOpen, MoveUpRight, MoveUpLeft } from "lucide-react";
-// import img6 from "../../assets/images/slider-image-3.jfif";
-import { NavLink } from 'react-router-dom';
-
-
-// ⬅️ alias لمكون الصورة
 const MotionImg = motion.img;
 
-const PhotoSlider = () => {
+export default function PhotoSlider() {
     const [positionIndexes, setPositionIndexes] = useState([0, 1, 2, 3, 4]);
-    const sliderimg1 = '/mnu/images/sliderimg1.jpeg'
-    const sliderimg2 = '/mnu/images/sliderimg2.jpeg'
-    const sliderimg3 = '/mnu/images/sliderimg3.jpeg'
-    const sliderimg4 = '/mnu/images/sliderimg4.jpeg'
-    const sliderimg5 = '/mnu/images/sliderimg5.jpeg'
 
-    // ✅ Auto change every 3 seconds
+    // 🖼️ المسارات — لازم تكون الصور داخل public/mnu/images/
+    const images = [
+        "/mnu/images/sliderimg1.jpeg",
+        "/mnu/images/sliderimg2.jpeg",
+        "/mnu/images/sliderimg3.jpeg",
+        "/mnu/images/sliderimg4.jpeg",
+        "/mnu/images/sliderimg5.jpeg",
+    ];
+
+    // ⏱️ حركة تلقائية كل 3 ثواني
     useEffect(() => {
         const interval = setInterval(() => {
-            setPositionIndexes((prevIndexes) =>
-                prevIndexes.map((prevIndex) => (prevIndex + 1) % 5)
-            );
-        }, 3000); // 3000ms = 3 seconds
-
-        return () => clearInterval(interval); // تنظيف الـ interval
+            setPositionIndexes((prev) => prev.map((i) => (i + 1) % images.length));
+        }, 3000);
+        return () => clearInterval(interval);
     }, []);
-
-    const images = [sliderimg1, sliderimg2, sliderimg3, sliderimg4, sliderimg5];
 
     const positions = ["center", "left1", "left", "right", "right1"];
 
     const imageVariants = {
-        center: { x: "0%", scale: 1, zIndex: 5 },
-        left1: { x: "-50%", scale: 0.7, zIndex: 3 },
-        left: { x: "-90%", scale: 0.5, zIndex: 2 },
-        right: { x: "90%", scale: 0.5, zIndex: 1 },
-        right1: { x: "50%", scale: 0.7, zIndex: 3 },
+        center: { x: "-50%", y: "-50%", scale: 1, zIndex: 5, opacity: 1 },
+        left1: { x: "-80%", y: "-50%", scale: 0.8, zIndex: 3, opacity: 0.9 },
+        left: { x: "-110%", y: "-50%", scale: 0.6, zIndex: 2, opacity: 0.6 },
+        right: { x: "10%", y: "-50%", scale: 0.6, zIndex: 2, opacity: 0.6 },
+        right1: { x: "-20%", y: "-50%", scale: 0.8, zIndex: 3, opacity: 0.9 },
     };
-    const { t } = useTranslation();
-    const { i18n } = useTranslation();
 
     return (
+        <section
+            className="block bg-gray-50 dark:bg-gray-900 transition-colors duration-300 py-20 min-h-[80vh] flex flex-col justify-center items-center"
+            data-aos="zoom-in"
+        >
+            <h1 className="text-3xl font-bold text-center mb-12">
+                Campus <span className="text-mainColor">Photo Slider</span>
+            </h1>
 
-        <section className=" bg-gray-50 dark:bg-gray-900 transition-colors duration-300 my-home-section-margin p-home-section-padding h-[80vh] "
-            data-aos="zoom-in">
-            <div className="max-w-7xl mx-auto flex justify-between items-center flex-row gap-home-section-gap">
-                {/* Header */}
-                <div className="">
-                    <div className="flex items-center gap-2 text-secondaryColorLight1 cursor-pointer select-none border-b-[1px] border-secondaryColorLight1 w-fit">
-                        <BookOpen className="w-6 h-6" />
-                        <span className="text-sm  tracking-widest uppercase">
-                            {t('tgallery')}
-                        </span>
-                    </div>
-                    <div className="text-center">
-                        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-                            <Trans
-                                i18nKey="gallery"
-                                components={{ highlight: <span className="text-mainColor" /> }}
-                            />
-                        </h2>
-                    </div>
-                </div>
-                <div>
-                    <NavLink className='group text-secondaryColorLight1 flex items-center gap-1 border-b border-secondaryColorLight1 w-fit'>
-                        <span>{t('view')}</span>
-                        {
-                            i18n.language == 'ar'
-                                ? <MoveUpLeft
-                                    size={20}
-                                    className="transition-transform duration-300 group-hover:-translate-x-1 group-hover:-translate-y-1"
-                                />
-                                : <MoveUpRight
-                                    size={20}
-                                    className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
-                                />
-                        }
-                    </NavLink>
-
-                </div>
-            </div>
-            <div className="flex items-center flex-col mt-6 justify-center h-3/4 relative overflow-hidden">
+            <div className="relative flex items-center justify-center overflow-hidden w-full h-[500px]">
                 {images.map((image, index) => (
                     <MotionImg
                         key={index}
                         src={image}
                         alt={`image-${index}`}
-                        className="rounded-[12px]"
+                        className="rounded-xl shadow-xl absolute object-cover border border-gray-200"
                         initial="center"
-                        animate={positions[positionIndexes[index % 5]]}
+                        animate={positions[positionIndexes[index % images.length]]}
                         variants={imageVariants}
-                        transition={{ duration: 0.6 }}
-                        style={{ width: "40%", position: "absolute" }}
+                        transition={{ duration: 0.7 }}
+                        style={{
+                            width: "40%",
+                            height: "auto",
+                            top: "50%",
+                            left: "50%",
+                            transform: "translate(-50%, -50%)",
+                        }}
+                        onError={(e) => {
+                            e.target.src =
+                                "https://via.placeholder.com/800x500?text=Image+Not+Found";
+                        }}
                     />
                 ))}
             </div>
         </section>
     );
-};
-
-export default PhotoSlider;
+}
