@@ -3,8 +3,7 @@ export const GoodHealthData = [
     {
         id: "1",
         label: "University Policy",
-        title:
-            "As part of its commitment to the UN Sustainable Development Goals, the university adopts a comprehensive policy to promote health and well-being among students, staff, and the wider community through:",
+        title: "University Policy Details",
         content: [
             {
                 text: "Health infrastructure facilities for students, academics and administrative staffs' wellbeing",
@@ -17,6 +16,10 @@ export const GoodHealthData = [
             {
                 text: "Rehabilitation and Physiotherapy Equipment",
                 pdf: "/mnu/pdfs/Policy/SDG3/Rehabilitation and Physiotherapy Equipment.pdf"
+            },
+            {
+                text: "1- University Policy on Maintaining a Smoke-Free Campus Environment.pdf",
+                pdf: "/mnu/pdfs/Policy/SDG3/1- University Policy on Maintaining a Smoke-Free Campus Environment.pdf"
             },
 
         ],
@@ -42,16 +45,16 @@ export const GoodHealthData = [
     {
         id: "3",
         label: "Partnerships",
-        title: "title",
+        title: "",
         content: [
-            {
-                text: "",
-                link: ""
-            },
-            {
-                text: "",
-                link: ""
-            },
+            // {
+            //     text: "",
+            //     link: ""
+            // },
+            // {
+            //     text: "",
+            //     link: ""
+            // },
         ],
     },
     {

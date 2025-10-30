@@ -1,58 +1,88 @@
-import { Leaf, AlertTriangle } from "lucide-react";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Leaf, AlertTriangle, X } from "lucide-react";
 
 const SustainabilityUnits = () => {
+    const [selectedImage, setSelectedImage] = useState(null);
+
+    // ✅ منع الـscroll أثناء عرض الصورة
+    useEffect(() => {
+        if (selectedImage) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "auto";
+        }
+        return () => {
+            document.body.style.overflow = "auto";
+        };
+    }, [selectedImage]);
+
     const initiatives = [
         {
             id: 1,
             icon: <Leaf className="text-green-600" size={22} />,
             title: "The Green Office",
-            subtitle: "Coordinating Sustainability Initiatives",
+            subtitle:
+                "The Green Office is responsible for coordinating sustainability initiatives, monitoring environmental performance, and promoting green practices across all university facilities. The concept of green offices was considered during the design of the university; all offices and classrooms adhere to green principles in terms of lighting and ventilation. To reinforce these principles, the Green Office was established to promote values and practices that help protect the environment and support environmental sustainability.",
             images: [
                 "/mnu/images/sliderimg1.jpeg",
-                "/mnu/images/sliderimg2.jpeg",
+                "/mnu/images/sliderimg6.jpeg",
+                "/mnu/images/sliderimg7.jpeg",
                 "/mnu/images/sliderimg3.jpeg",
             ],
-            description: `The Green Office is responsible for coordinating sustainability initiatives, 
-      monitoring environmental performance, and promoting green practices across all university facilities.`,
-            objectivesTitle: "Key Objectives",
+            objectivesTitle: "Formation:",
             objectives: [
-                "Promote the culture of sustainability across the university community",
-                "Enhance social responsibility awareness to address environmental challenges",
-                "Rationalize energy consumption through sustainable management programs",
-                "Activate environmental monitoring systems to improve carbon footprint",
+                "Vice President for Academic Affairs – Chair",
+                "University Secretary-General – Member",
+                "Dean of the Engineering and Physical Sciences Sector – Member",
+                "Coordinator of the English Language and Specialized Translation Program – Member",
+                "Coordinator of the Clinical Pharmacy (Pharm D) Program – Member",
+                "Administrative Staff Member – Member",
+                "Representative from the University’s IT Department – Member",
+                "President of the Student Union – Member",
             ],
-            leadership: `Led by the Vice President for Academic Affairs with representation from key academic sectors and student leadership.`,
+            leadershipTitle: "Objectives:",
+            leadership: [
+                "Promote the culture of sustainability across the university community.",
+                "Enhance social responsibility awareness to address environmental challenges and support efforts toward achieving sustainability goals.",
+                "Rationalize energy consumption through the development of sustainable management programs.",
+                "Activate environmental monitoring systems to improve the university’s carbon footprint and reduce harmful emissions.",
+            ],
         },
         {
             id: 2,
             icon: <AlertTriangle className="text-green-600" size={22} />,
-            title: "Crisis & Disaster Management",
-            subtitle: "Risk Assessment & Emergency Preparedness",
-            images: [
-                "/mnu/images/sliderimg4.jpeg",
-                "/mnu/images/sliderimg5.jpeg",
-                "/mnu/images/sliderimg6.jpeg",
-                "/mnu/images/sliderimg7.jpeg",
-            ],
-            description: `The Crisis and Disaster Management Unit works on risk assessment, emergency preparedness, and developing recovery plans 
-      to ensure safety and sustainability in response to natural and man-made disasters.`,
-            objectivesTitle: "Core Objectives",
+            title: "Crisis and Disaster Management Unit",
+            subtitle:
+                "The Crisis and Disaster Management Unit works on risk assessment, emergency preparedness, and developing recovery plans to ensure safety and sustainability in response to natural and man-made disasters.",
+            images: ["/mnu/images/sliderimg2.jpeg"],
+            objectivesTitle: "Formation:",
             objectives: [
-                "Protect all university personnel from injuries and occupational hazards",
-                "Preserve university property, facilities, and equipment from damage",
-                "Ensure implementation of occupational safety and health standards",
-                "Provide effective risk prevention for human and material resources",
+                "Assistant Coordinator of the Health Sciences Program – Chair",
+                "Coordinator of the Artificial Intelligence Program – Member",
+                "Assistant Coordinator of the Nursing Program – Executive Director",
+                "Coordinator of the Medicine and Surgery Program – Member",
+                "Representative from the Security Department – Member",
+                "Representative from the University’s Engineering Department – Member",
+                "Representative from the Workshops and Laboratory Technicians – Member",
+                "Director of Administrative Affairs – Member",
             ],
-            leadership: `Chaired by the Assistant Coordinator of the Health Sciences Program with representation from multiple academic and administrative departments.`,
+            leadershipTitle: "Objectives:",
+            leadership: [
+                "Protect all university personnel—faculty, administrative staff, and students—from injuries and occupational hazards by preventing accidents and professional diseases.",
+                "Preserve university property, facilities, and equipment from damage or loss resulting from accidents.",
+                "Ensure the implementation of all occupational safety and health standards that provide a safe environment and effective risk prevention for both human and material resources.",
+            ],
         },
     ];
 
     return (
         <section className="py-12 px-4 md:px-8 lg:px-16 bg-white">
             <div className="text-center mb-10">
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-                    University Initiatives
-                </h2>
+                <h1 className="text-2xl font-semibold text-center">
+                    University <span className="text-mainColor">Initiatives</span>
+                </h1>
+                <div className="mt-1 mx-auto h-1 w-32 bg-gradient-to-r from-mainColor to-green-400 rounded-full"></div>
                 <p className="text-gray-600 mt-2">
                     Discover our commitment to sustainability and safety through dedicated administrative units
                 </p>
@@ -70,22 +100,21 @@ const SustainabilityUnits = () => {
                                 {item.title}
                             </h3>
                         </div>
+
                         <p className="text-sm text-gray-600 mb-4">{item.subtitle}</p>
 
                         <div className="flex flex-wrap gap-2 mb-4">
                             {item.images.map((img, i) => (
-                                <img
+                                <motion.img
                                     key={i}
                                     src={img}
                                     alt=""
-                                    className="h-32 w-40 object-cover rounded-lg"
+                                    className="h-32 w-40 object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform duration-300"
+                                    onClick={() => setSelectedImage(img)}
+                                    whileHover={{ scale: 1.05 }}
                                 />
                             ))}
                         </div>
-
-                        <p className="text-gray-700 text-sm mb-4 leading-relaxed">
-                            {item.description}
-                        </p>
 
                         <h4 className="font-semibold text-gray-900 mb-2">
                             {item.objectivesTitle}
@@ -97,12 +126,50 @@ const SustainabilityUnits = () => {
                         </ul>
 
                         <div className="border-t pt-3 text-sm text-gray-600">
-                            <h5 className="font-semibold mb-1">Leadership</h5>
-                            <p>{item.leadership}</p>
+                            <h5 className="font-semibold text-gray-900 mb-2">
+                                {item.leadershipTitle}
+                            </h5>
+                            <ul className="list-disc pl-5 space-y-1 text-gray-700">
+                                {item.leadership.map((leader, idx) => (
+                                    <li key={idx}>{leader}</li>
+                                ))}
+                            </ul>
                         </div>
                     </div>
                 ))}
             </div>
+
+            {/* ✅ Popup image */}
+            <AnimatePresence>
+                {selectedImage && (
+                    <motion.div
+                        className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        onClick={() => setSelectedImage(null)}
+                    >
+                        <motion.div
+                            className="relative"
+                            initial={{ scale: 0.8 }}
+                            animate={{ scale: 1 }}
+                            exit={{ scale: 0.8 }}
+                        >
+                            <img
+                                src={selectedImage}
+                                alt="Expanded view"
+                                className="max-h-[10vh] max-w-[90vw] rounded-xl shadow-2xl"
+                            />
+                            <button
+                                className="absolute top-2 right-2 bg-white/80 hover:bg-white p-1.5 rounded-full"
+                                onClick={() => setSelectedImage(null)}
+                            >
+                                <X className="text-gray-700" size={20} />
+                            </button>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </section>
     );
 };

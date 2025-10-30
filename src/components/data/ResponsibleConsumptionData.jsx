@@ -3,13 +3,12 @@
 export const ResponsibleConsumptionData = [
     {
         id: "1",
-        label: "University Policy",
-        title:
-            "As part of its commitment to the UN Sustainable Development Goals, the university adopts a comprehensive policy to promote health and well-being among students, staff, and the wider community through:",
+        label: "University Policy  ",
+        title: "University Policy Details",
         content: [
             {
-                text: "",
-                pdf: ""
+                text: "10- Integrated Waste Reduction and Recycling Policy",
+                pdf: "/mnu/pdfs/Policy/SDG12/10- Integrated Waste Reduction and Recycling Policy.pdf"
             },
 
         ],
@@ -35,21 +34,21 @@ export const ResponsibleConsumptionData = [
         label: "Partnerships",
         title: "title",
         content: [
-            {
-                text: "",
-                link: ""
-            },
-            {
-                text: "",
-                link: ""
-            },
+            // {
+            //     text: "",
+            //     link: ""
+            // },
+            // {
+            //     text: "",
+            //     link: ""
+            // },
         ],
     },
     {
         id: "4",
         label: "Achievements",
         title: "University Achievements",
-        image: "/mnu/images/achievements/SDG12.jpeg", // ✅ الصورة اللي هتظهر بدل النصوص
+        image: ["/mnu/images/achievements/SDG12.jpeg", "/mnu/images/achievements/SDG12 (2).jpeg", "/mnu/images/achievements/SDG12 (1).jpeg"], // ✅ الصورة اللي هتظهر بدل النصوص
     },
 ];
 export const main = "/mnu/images/responsibleconsumption.png";

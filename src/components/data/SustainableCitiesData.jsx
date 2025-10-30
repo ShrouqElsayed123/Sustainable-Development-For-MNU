@@ -3,13 +3,16 @@
 export const SustainableCitiesData = [
     {
         id: "1",
-        label: "University Policy",
-        title:
-            "As part of its commitment to the UN Sustainable Development Goals, the university adopts a comprehensive policy to promote health and well-being among students, staff, and the wider community through:",
+        label: "University Policy  ",
+        title: "University Policy Details",
         content: [
             {
-                text: "",
-                pdf: ""
+                text: "11 - Community Engagement and Social Inclusion Policy.pdf",
+                pdf: "/mnu/pdfs/Policy/SDG11/11 - Community Engagement and Social Inclusion Policy.pdf"
+            },
+            {
+                text: "University Practices for Transportion",
+                pdf: "/mnu/pdfs/Policy/SDG11/University Practices for Transportion.pdf"
             },
 
         ],
@@ -33,16 +36,16 @@ export const SustainableCitiesData = [
     {
         id: "3",
         label: "Partnerships",
-        title: "title",
+        title: "",
         content: [
-            {
-                text: "",
-                link: ""
-            },
-            {
-                text: "",
-                link: ""
-            },
+            // {
+            //     text: "",
+            //     link: ""
+            // },
+            // {
+            //     text: "",
+            //     link: ""
+            // },
         ],
     },
     {

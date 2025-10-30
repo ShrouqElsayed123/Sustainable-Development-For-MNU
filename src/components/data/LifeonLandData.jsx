@@ -4,12 +4,19 @@ export const LifeonLandData = [
     {
         id: "1",
         label: "University Policy",
-        title:
-            "As part of its commitment to the UN Sustainable Development Goals, the university adopts a comprehensive policy to promote health and well-being among students, staff, and the wider community through:",
+        title: "University Policy Details",
         content: [
             {
+                text: "5 - Policy for Conservation and Sustainable Use of Terrestrial Ecosystems",
+                pdf: "/mnu/pdfs/Policy/SDG15/5 - Policy for Conservation and Sustainable Use of Terrestrial Ecosystems.pdf"
+            },
+            {
+                text: "7- Environmental Conservation and Biodiversity Protection Policy",
+                pdf: "/mnu/pdfs/Policy/SDG15/7- Environmental Conservation and Biodiversity Protection Policy.pdf"
+            },
+            {
                 text: "",
-                pdf: ""
+                pdf: "/mnu/pdfs/Policy/SDG15/"
             },
 
         ],
@@ -19,26 +26,26 @@ export const LifeonLandData = [
         label: "Activities / Initiatives",
         title: "Activities and Initiatives Details",
         content: [
-            {
-                text: "",
-                pdf: ""
-            },
+            // {
+            //     text: "",
+            //     pdf: ""
+            // },
 
         ],
     },
     {
         id: "3",
         label: "Partnerships",
-        title: "title",
+        title: "",
         content: [
-            {
-                text: "",
-                link: ""
-            },
-            {
-                text: "",
-                link: ""
-            },
+            // {
+            //     text: "",
+            //     link: ""
+            // },
+            // {
+            //     text: "",
+            //     link: ""
+            // },
         ],
     },
     {

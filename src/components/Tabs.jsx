@@ -96,12 +96,23 @@ export default function Tabs({ data }) {
                                     </h3>
 
                                     {/* ✅ لو في صورة نعرضها بدل القايمة */}
-                                    {tab.image ? (
+                                    {Array.isArray(tab.image) ? (
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 justify-items-center">
+                                            {tab.image.map((img, index) => (
+                                                <img
+                                                    key={index}
+                                                    src={img}
+                                                    alt={`${tab.label}-${index}`}
+                                                    className="rounded-2xl shadow-lg max-w-xs sm:max-w-sm hover:scale-105 transition-transform duration-500"
+                                                />
+                                            ))}
+                                        </div>
+                                    ) : tab.image ? (
                                         <div className="flex justify-center">
                                             <img
                                                 src={tab.image}
                                                 alt={tab.label}
-                                                className="rounded-2xl shadow-lg max-w-full sm:max-w-md hover:scale-105 transition-transform duration-500"
+                                                className="rounded-2xl shadow-lg max-w-xs sm:max-w-sm hover:scale-105 transition-transform duration-500"
                                             />
                                         </div>
                                     ) : (
@@ -128,6 +139,8 @@ export default function Tabs({ data }) {
                                             ))}
                                         </ul>
                                     )}
+
+
                                 </motion.div>
                             ))}
                     </AnimatePresence>

@@ -5,13 +5,12 @@ export const CleanWaterData =
         {
             id: "1",
             label: "University Policy",
-            title:
-                "As part of its commitment to the UN Sustainable Development Goals, the university adopts a comprehensive policy to promote health and well-being among students, staff, and the wider community through:",
+            title: "University Policy Details",
             content: [
-                {
-                    text: "",
-                    pdf: ""
-                },
+                // {
+                //     text: "",
+                //     pdf: ""
+                // },
 
             ],
         },
@@ -35,16 +34,16 @@ export const CleanWaterData =
         {
             id: "3",
             label: "Partnerships",
-            title: "title",
+            title: "",
             content: [
-                {
-                    text: "",
-                    link: ""
-                },
-                {
-                    text: "",
-                    link: ""
-                },
+                // {
+                //     text: "",
+                //     link: ""
+                // },
+                // {
+                //     text: "",
+                //     link: ""
+                // },
             ],
         },
         {

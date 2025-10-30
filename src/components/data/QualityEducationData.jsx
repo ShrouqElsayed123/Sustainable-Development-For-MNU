@@ -3,14 +3,25 @@
 export const QualityEducationData = [
     {
         id: "1",
-        label: "University Policy",
-        title:
-            "As part of its commitment to the UN Sustainable Development Goals, the university adopts a comprehensive policy to promote health and well-being among students, staff, and the wider community through:",
+        label: "University Policy  ",
+        title: "University Policy Details",
         content: [
             {
                 text: "List of  Courses Related to Sustainability",
                 pdf: "/mnu/pdfs/Policy/SDG4/List of  Courses Related to Sustainability.pdf"
             },
+            {
+                text: "2 - Policy on Upholding Academic Freedom and Research Integrity",
+                pdf: "/mnu/pdfs/Policy/SDG4/2 - Policy on Upholding Academic Freedom and Research Integrity.pdf"
+            },
+            {
+                text: "3 - Policy on Academic Quality Assurance, Integrity, and Conflict of Interest Management",
+                pdf: "/mnu/pdfs/Policy/SDG4/3 - Policy on Academic Quality Assurance, Integrity, and Conflict of Interest Management.pdf"
+            },
+            // {
+            //     text: "",
+            //     pdf: "/mnu/pdfs/Policy/SDG4/.pdf"
+            // },
 
         ],
     },
@@ -46,16 +57,16 @@ export const QualityEducationData = [
     {
         id: "3",
         label: "Partnerships",
-        title: "title",
+        title: "",
         content: [
-            {
-                text: "",
-                link: ""
-            },
-            {
-                text: "",
-                link: ""
-            },
+            // {
+            //     text: "",
+            //     link: ""
+            // },
+            // {
+            //     text: "",
+            //     link: ""
+            // },
         ],
     },
     {

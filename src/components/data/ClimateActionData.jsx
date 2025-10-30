@@ -4,12 +4,11 @@ export const ClimateActionData = [
     {
         id: "1",
         label: "University Policy",
-        title:
-            "As part of its commitment to the UN Sustainable Development Goals, the university adopts a comprehensive policy to promote health and well-being among students, staff, and the wider community through:",
+        title: "University Policy Details",
         content: [
             {
-                text: "",
-                pdf: ""
+                text: "University Practices for Energy & Climate Changes",
+                pdf: "/mnu/pdfs/Policy/SDG13/University Practices for Energy & Climate Changes.pdf"
             },
 
         ],
@@ -19,33 +18,33 @@ export const ClimateActionData = [
         label: "Activities / Initiatives",
         title: "Activities and Initiatives Details",
         content: [
-            {
-                text: "",
-                pdf: ""
-            },
+            // {
+            //     text: "",
+            //     pdf: ""
+            // },
 
         ],
     },
     {
         id: "3",
         label: "Partnerships",
-        title: "title",
+        title: "",
         content: [
-            {
-                text: "",
-                link: ""
-            },
-            {
-                text: "",
-                link: ""
-            },
+            // {
+            //     text: "",
+            //     link: ""
+            // },
+            // {
+            //     text: "",
+            //     link: ""
+            // },
         ],
     },
     {
         id: "4",
         label: "Achievements",
         title: "University Achievements",
-        image: "/mnu/images/achievements.jpg", // ✅ الصورة اللي هتظهر بدل النصوص
+        image: "/mnu/images/achievements/SDG12.jpeg", // ✅ الصورة اللي هتظهر بدل النصوص
     },
 ];
 export const main = "/mnu/images/climateaction.png";
