@@ -18,9 +18,10 @@ export const GoodHealthData = [
                 pdf: "/mnu/pdfs/Policy/SDG3/Rehabilitation and Physiotherapy Equipment.pdf"
             },
             {
-                text: "1- University Policy on Maintaining a Smoke-Free Campus Environment.pdf",
+                text: "1- University Policy on Maintaining a Smoke-Free Campus Environment",
                 pdf: "/mnu/pdfs/Policy/SDG3/1- University Policy on Maintaining a Smoke-Free Campus Environment.pdf"
             },
+
 
         ],
     },
@@ -39,7 +40,14 @@ export const GoodHealthData = [
 
 
             },
-
+            {
+                text: "Community Health outrearch programs (2023-2024)",
+                pdf: "/mnu/pdfs/Activities/SDG3/Community Health outrearch programs (2023-2024).pdf"
+            },
+            {
+                text: "(2023-2024) Community Health outrearch programs",
+                pdf: "/mnu/pdfs/Activities/SDG3/(2023-2024) Community Health outrearch programs .pdf"
+            },
         ],
     },
     {

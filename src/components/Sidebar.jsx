@@ -34,7 +34,7 @@ export default function Sidebar() {
                 <div className="flex items-center justify-start p-2 gap-3 h-20 border-b">
                     <img src={logo} alt="" className="w-16" />
                     <h1 className="text-2xl font-extrabold tracking-wide font-sans text-gray-800">
-                        Estidama
+                        Sustainability
                     </h1>
                 </div>
 

@@ -66,7 +66,7 @@ export default function Tabs({ data }) {
                                 key={tab.id}
                                 onClick={() => setActiveTab(tab.id)}
                                 className={`flex items-center justify-start gap-3 px-4 py-3 text-sm sm:text-base font-semibold transition-all duration-300 border-b md:border-b-0 md:border-l-4 w-full md:w-auto
-                                    ${activeTab === tab.id
+                  ${activeTab === tab.id
                                         ? "text-mainColor bg-white border-mainColor shadow-md"
                                         : "text-gray-600 hover:text-mainColor/80 border-transparent"
                                     }`}
@@ -117,30 +117,53 @@ export default function Tabs({ data }) {
                                         </div>
                                     ) : (
                                         <ul className="space-y-5">
-                                            {tab.content?.map((goal, i) => (
-                                                <motion.li
-                                                    key={i}
-                                                    initial={{ opacity: 0, x: -20 }}
-                                                    animate={{ opacity: 1, x: 0 }}
-                                                    transition={{ delay: i * 0.1 }}
-                                                >
-                                                    <a
-                                                        href={goal.pdf || goal.link}
-                                                        target="_blank"
-                                                        rel="noopener noreferrer"
-                                                        className="flex items-center gap-3 bg-white border border-gray-100 rounded-xl p-5 shadow-sm hover:shadow-md transition-all duration-300 group"
+                                            {tab.content?.map((goal, i) => {
+                                                const link = goal.pdf || goal.link;
+                                                const isImage = link?.match(
+                                                    /\.(jpg|jpeg|png|gif|webp)$/i
+                                                );
+                                                const isPdf = link?.match(/\.pdf$/i);
+
+                                                return (
+                                                    <motion.li
+                                                        key={i}
+                                                        initial={{ opacity: 0, x: -20 }}
+                                                        animate={{ opacity: 1, x: 0 }}
+                                                        transition={{ delay: i * 0.1 }}
                                                     >
-                                                        <CheckCircle className="w-6 h-6 text-mainColor flex-shrink-0 transition-transform duration-300 group-hover:scale-110" />
-                                                        <span className="text-gray-800 text-sm sm:text-base group-hover:text-mainColor transition-colors duration-300">
-                                                            {goal.text}
-                                                        </span>
-                                                    </a>
-                                                </motion.li>
-                                            ))}
+                                                        {isImage ? (
+                                                            // ✅ عرض الصورة لو الرابط صورة
+                                                            <div className="flex flex-col items-center bg-white border border-gray-100 rounded-xl p-4 shadow-sm hover:shadow-md transition-all duration-300">
+                                                                <img
+                                                                    src={link}
+                                                                    alt={goal.text}
+                                                                    className="rounded-xl max-w-xs sm:max-w-sm hover:scale-105 transition-transform duration-500"
+                                                                />
+                                                                {goal.text && (
+                                                                    <span className="text-gray-700 text-sm mt-3 font-medium text-center">
+                                                                        {goal.text}
+                                                                    </span>
+                                                                )}
+                                                            </div>
+                                                        ) : (
+                                                            // ✅ لينك عادي (PDF أو رابط خارجي)
+                                                            <a
+                                                                href={link}
+                                                                target="_blank"
+                                                                rel="noopener noreferrer"
+                                                                className="flex items-center gap-3 bg-white border border-gray-100 rounded-xl p-5 shadow-sm hover:shadow-md transition-all duration-300 group"
+                                                            >
+                                                                <CheckCircle className="w-6 h-6 text-mainColor flex-shrink-0 transition-transform duration-300 group-hover:scale-110" />
+                                                                <span className="text-gray-800 text-sm sm:text-base group-hover:text-mainColor transition-colors duration-300">
+                                                                    {goal.text}
+                                                                </span>
+                                                            </a>
+                                                        )}
+                                                    </motion.li>
+                                                );
+                                            })}
                                         </ul>
                                     )}
-
-
                                 </motion.div>
                             ))}
                     </AnimatePresence>

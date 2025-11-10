@@ -51,6 +51,10 @@ export const QualityEducationData = [
                 text: "Activities organized by student organizations related to sustainability ",
                 pdf: "/mnu/pdfs/Activities/SDG4/Activities organized by student organizations related to sustainability .pdf"
             },
+            {
+                text: "Cultural activities on campus ",
+                pdf: "/mnu/pdfs/Activities/SDG4/Cultural activities on campus.pdf"
+            },
 
         ],
     },
@@ -59,10 +63,10 @@ export const QualityEducationData = [
         label: "Partnerships",
         title: "",
         content: [
-            // {
-            //     text: "",
-            //     link: ""
-            // },
+            {
+                text: "Sustainability Program(s)_with_international_collaborations",
+                link: "/mnu/pdfs/Partnerships/SDG4/Sustainability Program(s)_with_international_collaborations.pdf"
+            },
             // {
             //     text: "",
             //     link: ""
