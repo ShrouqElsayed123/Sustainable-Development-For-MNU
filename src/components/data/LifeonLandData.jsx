@@ -14,10 +14,7 @@ export const LifeonLandData = [
                 text: "7- Environmental Conservation and Biodiversity Protection Policy",
                 pdf: "/mnu/pdfs/Policy/SDG15/7- Environmental Conservation and Biodiversity Protection Policy.pdf"
             },
-            {
-                text: "",
-                pdf: "/mnu/pdfs/Policy/SDG15/"
-            },
+
 
         ],
     },
@@ -36,7 +33,7 @@ export const LifeonLandData = [
     {
         id: "3",
         label: "Partnerships",
-        title: "",
+        title: "Partnerships",
         content: [
             // {
             //     text: "",
@@ -52,7 +49,7 @@ export const LifeonLandData = [
         id: "4",
         label: "Achievements",
         title: "University Achievements",
-        image: "/mnu/images/achievements.jpg", // ✅ الصورة اللي هتظهر بدل النصوص
+        // image: "/mnu/images/achievements.jpg", // ✅ الصورة اللي هتظهر بدل النصوص
     },
 ];
 export const main = "/mnu/images/lifeonland.png";

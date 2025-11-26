@@ -24,12 +24,12 @@ const SustainabilityUnits = () => {
             title: "The Green Office",
             subtitle:
                 "The Green Office is responsible for coordinating sustainability initiatives, monitoring environmental performance, and promoting green practices across all university facilities. The concept of green offices was considered during the design of the university; all offices and classrooms adhere to green principles in terms of lighting and ventilation. To reinforce these principles, the Green Office was established to promote values and practices that help protect the environment and support environmental sustainability.",
-            images: [
-                "/mnu/images/sliderimg1.jpeg",
-                "/mnu/images/sliderimg6.jpeg",
-                "/mnu/images/sliderimg7.jpeg",
-                "/mnu/images/sliderimg3.jpeg",
-            ],
+            // images: [
+            //     "/mnu/images/sliderimg1.jpeg",
+            //     "/mnu/images/sliderimg6.jpeg",
+            //     "/mnu/images/sliderimg7.jpeg",
+            //     "/mnu/images/sliderimg3.jpeg",
+            // ],
             objectivesTitle: "Formation:",
             objectives: [
                 "Vice President for Academic Affairs – Chair",
@@ -55,7 +55,7 @@ const SustainabilityUnits = () => {
             title: "Crisis and Disaster Management Unit",
             subtitle:
                 "The Crisis and Disaster Management Unit works on risk assessment, emergency preparedness, and developing recovery plans to ensure safety and sustainability in response to natural and man-made disasters.",
-            images: ["/mnu/images/sliderimg2.jpeg"],
+            // images: ["/mnu/images/sliderimg2.jpeg"],
             objectivesTitle: "Formation:",
             objectives: [
                 "Assistant Coordinator of the Health Sciences Program – Chair",
@@ -103,18 +103,18 @@ const SustainabilityUnits = () => {
 
                         <p className="text-sm text-gray-600 mb-4">{item.subtitle}</p>
 
-                        <div className="flex flex-wrap gap-2 mb-4">
+                        {/* <div className="flex flex-wrap gap-2 mb-4">
                             {item.images.map((img, i) => (
                                 <motion.img
                                     key={i}
                                     src={img}
                                     alt=""
                                     className="h-32 w-40 object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform duration-300"
-                                    onClick={() => setSelectedImage(img)}
+
                                     whileHover={{ scale: 1.05 }}
                                 />
                             ))}
-                        </div>
+                        </div> */}
 
                         <h4 className="font-semibold text-gray-900 mb-2">
                             {item.objectivesTitle}

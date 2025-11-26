@@ -19,14 +19,6 @@ export const PartnershipsData = [
         title: "Activities and Initiatives Details",
         content: [
             {
-                text: "Sustainability Program(s)_with_international_collaborations",
-                pdf: "/mnu/pdfs/Activities/SDG17/Sustainability Program(s)_with_international_collaborations.pdf"
-            },
-            {
-                text: "Current Collaborations with Health Institutions (2023-2024)",
-                pdf: "/mnu/pdfs/Activities/SDG17/Current Collaborations with Health Institutions (2023-2024).pdf"
-            },
-            {
                 text: "2023-2024 Cross-Sectoral Dialogue about the SDGs",
                 pdf: "/mnu/pdfs/Activities/SDG17/2023-2024 Cross-Sectoral Dialogue about the SDGs.pdf"
             },
@@ -34,13 +26,36 @@ export const PartnershipsData = [
                 text: "2023-2024 Education for SDGs in the wider community",
                 pdf: "/mnu/pdfs/Activities/SDG17/2023-2024 Education for SDGs in the wider community.pdf"
             },
+            {
+                text: "(2023-2024) Collaboration for SDG Best Practice",
+                pdf: "/mnu/pdfs/Activities/SDG17/(2023-2024) Collaboration for SDG Best Practice.pdf"
+            },
+            {
+                text: "2024_International_Collaboration_Data_Gathering",
+                pdf: "/mnu/pdfs/Activities/SDG17/2024_International_Collaboration_Data_Gathering.pdf"
+            },
+            {
+                text: "Sustainability Program(s)_with_international_collaborations",
+                pdf: "/mnu/pdfs/Activities/SDG17/Sustainability Program(s)_with_international_collaborations.pdf"
+            },
+            {
+                text: "Current Collaborations with Health Institutions (2023-2024)",
+                pdf: "/mnu/pdfs/Activities/SDG17/Current Collaborations with Health Institutions (2023-2024).pdf"
+            },
+
+            {
+                text: "MNU_Sustainability_Literacy_Report_2023",
+                pdf: "/mnu/pdfs/Activities/SDG17/MNU_Sustainability_Literacy_Report_2023.pdf"
+            },
+
+
 
         ],
     },
     {
         id: "3",
         label: "Partnerships",
-        title: "",
+        title: "Partnerships",
         content: [
             {
                 text: "(2023-2024) Collaboration for SDG Best Practice",
@@ -63,9 +78,15 @@ export const PartnershipsData = [
         title: "University Achievements",
         content: [
             {
-                text: "2024_International_Collaboration_Data_Gathering",
-                link: "/mnu/pdfs/achievements/MNU_Sustainability_Literacy_Report_2023.pdf"
-            }
+                text: "2023-2024 SDG17 report",
+                link: "/mnu/pdfs/achievements/SDG17/2023-2024 SDG17 report.pdf"
+            },
+
+            {
+                text: "MNU_Sustainability_Literacy_Report_2023",
+                link: "/mnu/pdfs/achievements/SDG17/MNU_Sustainability_Literacy_Report_2023.pdf"
+            },
+
         ]
 
 

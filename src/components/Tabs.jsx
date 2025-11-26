@@ -77,7 +77,6 @@ export default function Tabs({ data }) {
                         );
                     })}
                 </div>
-
                 {/* ===== Animated Content ===== */}
                 <div className="flex-1 p-5 sm:p-8 bg-gradient-to-br from-white to-gray-50">
                     <AnimatePresence mode="wait">
@@ -97,32 +96,33 @@ export default function Tabs({ data }) {
 
                                     {/* ✅ لو في صورة نعرضها بدل القايمة */}
                                     {Array.isArray(tab.image) ? (
-                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 justify-items-center">
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                             {tab.image.map((img, index) => (
-                                                <img
+                                                <div
                                                     key={index}
-                                                    src={img}
-                                                    alt={`${tab.label}-${index}`}
-                                                    className="rounded-2xl shadow-lg max-w-xs sm:max-w-sm hover:scale-105 transition-transform duration-500"
-                                                />
+                                                    className="w-full flex justify-center"
+                                                >
+                                                    <img
+                                                        src={img}
+                                                        alt={`${tab.label}-${index}`}
+                                                        className="w-full max-w-2xl h-auto rounded-2xl shadow-lg hover:scale-105 transition-transform duration-500"
+                                                    />
+                                                </div>
                                             ))}
                                         </div>
                                     ) : tab.image ? (
-                                        <div className="flex justify-center">
+                                        <div className="w-full max-w-2xl mx-auto aspect-video overflow-hidden rounded-2xl shadow-lg">
                                             <img
                                                 src={tab.image}
                                                 alt={tab.label}
-                                                className="rounded-2xl shadow-lg max-w-xs sm:max-w-sm hover:scale-105 transition-transform duration-500"
+                                                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                                             />
                                         </div>
                                     ) : (
                                         <ul className="space-y-5">
                                             {tab.content?.map((goal, i) => {
                                                 const link = goal.pdf || goal.link;
-                                                const isImage = link?.match(
-                                                    /\.(jpg|jpeg|png|gif|webp)$/i
-                                                );
-                                                const isPdf = link?.match(/\.pdf$/i);
+                                                const isImage = link?.match(/\.(jpg|jpeg|png|gif|webp)$/i);
 
                                                 return (
                                                     <motion.li
@@ -132,13 +132,19 @@ export default function Tabs({ data }) {
                                                         transition={{ delay: i * 0.1 }}
                                                     >
                                                         {isImage ? (
-                                                            // ✅ عرض الصورة لو الرابط صورة
-                                                            <div className="flex flex-col items-center bg-white border border-gray-100 rounded-xl p-4 shadow-sm hover:shadow-md transition-all duration-300">
-                                                                <img
-                                                                    src={link}
-                                                                    alt={goal.text}
-                                                                    className="rounded-xl max-w-xs sm:max-w-sm hover:scale-105 transition-transform duration-500"
-                                                                />
+                                                            // ✅ صورة Responsive داخل الليست
+                                                            <div className="flex flex-col items-center bg-white border border-gray-100 rounded-xl p-4 shadow-sm hover:shadow-md transition-all duration-300 w-full">
+                                                                <div className="w-full max-w-2xl mx-auto  overflow-hidden rounded-2xl ">
+
+                                                                    <img
+                                                                        src={link}
+                                                                        alt={goal.text}
+                                                                        className="w-full h-[300px] rounded-xl hover:scale-105 transition-transform duration-500 object-contain"
+                                                                    />
+                                                                </div>
+
+
+
                                                                 {goal.text && (
                                                                     <span className="text-gray-700 text-sm mt-3 font-medium text-center">
                                                                         {goal.text}
@@ -146,7 +152,7 @@ export default function Tabs({ data }) {
                                                                 )}
                                                             </div>
                                                         ) : (
-                                                            // ✅ لينك عادي (PDF أو رابط خارجي)
+                                                            // ✅ لينك عادي (PDF أو خارجي)
                                                             <a
                                                                 href={link}
                                                                 target="_blank"
@@ -168,6 +174,7 @@ export default function Tabs({ data }) {
                             ))}
                     </AnimatePresence>
                 </div>
+
             </div>
         </section>
     );

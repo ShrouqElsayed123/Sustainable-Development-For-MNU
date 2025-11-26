@@ -10,6 +10,30 @@ export const ResponsibleConsumptionData = [
                 text: "10- Integrated Waste Reduction and Recycling Policy",
                 pdf: "/mnu/pdfs/Policy/SDG12/10- Integrated Waste Reduction and Recycling Policy.pdf"
             },
+            {
+                text: "12.2.3 Policy waste disposal",
+                pdf: "/mnu/pdfs/Policy/SDG12/12.2.3 Policy waste disposal.pdf"
+            },
+            {
+                text: "12.2.4. Policy waste disposaLandfill",
+                pdf: "/mnu/pdfs/Policy/SDG12/12.2.4. Policy waste disposaLandfill.pdf"
+            },
+            {
+                text: "12.2.5. Policy for minimisation of plastic",
+                pdf: "/mnu/pdfs/Policy/SDG12/12.2.5. Policy for minimisation of plastic.pdf"
+            },
+            {
+                text: "12.2.6. Policy for minimisation of disposable",
+                pdf: "/mnu/pdfs/Policy/SDG12/12.2.6. Policy for minimisation of disposable.pdf"
+            },
+            {
+                text: "12.2.7 Disposable policy extensions to sevices",
+                pdf: "/mnu/pdfs/Policy/SDG12/12.2.7 Disposable policy extensions to sevices.pdf"
+            },
+            {
+                text: "12.3.1 Waste tracking",
+                pdf: "/mnu/pdfs/Policy/SDG12/12.3.1 Waste tracking.pdf"
+            },
 
         ],
     },
@@ -32,7 +56,7 @@ export const ResponsibleConsumptionData = [
     {
         id: "3",
         label: "Partnerships",
-        title: "title",
+        title: "Partnerships",
         content: [
             // {
             //     text: "",
@@ -48,8 +72,39 @@ export const ResponsibleConsumptionData = [
         id: "4",
         label: "Achievements",
         title: "University Achievements",
-        image: ["/mnu/images/achievements/SDG12.jpeg", "/mnu/images/achievements/SDG12 (2).jpeg", "/mnu/images/achievements/SDG12 (1).jpeg"], // ✅ الصورة اللي هتظهر بدل النصوص
-    },
+        content: [
+            {
+                text: "Sustainability report 2023-2024",
+                link: "/mnu/pdfs/achievements/SDG12/Sustainability report 2023-2024.pdf"
+            },
+            {
+                text: "2023-2024 SDG12 Report",
+                link: "/mnu/pdfs/achievements/SDG12/2023-2024 SDG12 Report.pdf"
+            },
+            {
+                text: "12.3.2  Proportion of waste recycled",
+                link: "/mnu/pdfs/achievements/SDG12/12.3.2  Proportion of waste recycled.pdf"
+            },
+            {
+                text: "Sustainability Annual report 2025",
+                link: "/mnu/pdfs/achievements/SDG12/Sustainability Annual report 2025.pdf"
+            },
+            {
+                text: "",
+                link: "/mnu/pdfs/achievements/SDG12/p1.jpeg"
+            },
+            {
+                text: "",
+                link: "/mnu/pdfs/achievements/SDG12/p2.jpeg"
+            },
+            {
+                text: "",
+                link: "/mnu/pdfs/achievements/SDG12/p3.jpeg"
+            }
+
+        ]
+    }
+
 ];
 export const main = "/mnu/images/responsibleconsumption.png";
 export const global = "/mnu/images/global.PNG";

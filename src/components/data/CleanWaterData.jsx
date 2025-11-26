@@ -34,7 +34,7 @@ export const CleanWaterData =
         {
             id: "3",
             label: "Partnerships",
-            title: "",
+            title: "Partnerships",
             content: [
                 // {
                 //     text: "",
@@ -46,12 +46,21 @@ export const CleanWaterData =
                 // },
             ],
         },
+
         {
             id: "4",
             label: "Achievements",
             title: "University Achievements",
-            image: "/mnu/images/achievements/SDG6.jpeg", // ✅ الصورة اللي هتظهر بدل النصوص
-        },
+            content: [
+
+                {
+                    text: "",
+                    link: "/mnu/pdfs/achievements/SDG6/p1.jpeg"
+                }
+            ]
+
+
+        }
     ];
 export const main = "/mnu/images/cleanwater.png";
 export const global = "/mnu/images/global.PNG";

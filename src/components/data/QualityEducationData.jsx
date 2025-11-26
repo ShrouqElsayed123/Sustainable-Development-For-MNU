@@ -40,6 +40,22 @@ export const QualityEducationData = [
                 pdf: "/mnu/pdfs/Activities/SDG4/(2023-2024) University Activities and Initiatives to Promote Quality Education.pdf"
             },
             {
+                text: "2023-2024 Public Event",
+                pdf: "/mnu/pdfs/Activities/SDG4/2023-2024 Public Event.pdf"
+            },
+            {
+                text: "2023-2024 Vocational training events",
+                pdf: "/mnu/pdfs/Activities/SDG4/2023-2024 Vocational training events.pdf"
+            },
+            {
+                text: "2023-2024 Public resources.pdf",
+                pdf: "/mnu/pdfs/Activities/SDG4/2023-2024 Public resources.pdf"
+            },
+            {
+                text: "2023-2024 Education outreach activities beyond campus",
+                pdf: "/mnu/pdfs/Activities/SDG4/2023-2024 Education outreach activities beyond campus.pdf"
+            },
+            {
                 text: "(2024–2025) University Activities and Initiatives to Promote Quality Education",
                 pdf: "/mnu/pdfs/Activities/SDG4/(2024–2025) University Activities and Initiatives to Promote Quality Education.pdf"
             },
@@ -56,15 +72,16 @@ export const QualityEducationData = [
                 pdf: "/mnu/pdfs/Activities/SDG4/Cultural activities on campus.pdf"
             },
 
+
         ],
     },
     {
         id: "3",
         label: "Partnerships",
-        title: "",
+        title: "Partnerships",
         content: [
             {
-                text: "Sustainability Program(s)_with_international_collaborations",
+                text: "Sustainability Program(s) with international collaborations",
                 link: "/mnu/pdfs/Partnerships/SDG4/Sustainability Program(s)_with_international_collaborations.pdf"
             },
             // {
@@ -73,12 +90,24 @@ export const QualityEducationData = [
             // },
         ],
     },
+
     {
         id: "4",
         label: "Achievements",
         title: "University Achievements",
-        image: "/mnu/images/achievements/SDG4.jpeg", // ✅ الصورة اللي هتظهر بدل النصوص
-    },
+        content: [
+            {
+                text: "2023-2024 SDG 4 Report",
+                link: "/mnu/pdfs/achievements/SDG4/2023-2024 SDG 4 Report.pdf"
+            },
+            {
+                text: "",
+                link: "/mnu/pdfs/achievements/SDG4/p1.jpeg"
+            }
+        ]
+
+
+    }
 ];
 
 export const main = "/mnu/images/qualityeducation.png";

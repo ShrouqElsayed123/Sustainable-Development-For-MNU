@@ -28,7 +28,7 @@ export const ZeroHungerData = [
     {
         id: "3",
         label: "Partnerships",
-        title: "",
+        title: "Partnerships",
         content: [
             // {
             //     text: "",
@@ -44,7 +44,7 @@ export const ZeroHungerData = [
         id: "4",
         label: "Achievements",
         title: "University Achievements",
-        image: "/mnu/images/achievements.jpg", // ✅ الصورة اللي هتظهر بدل النصوص
+        // image: "/mnu/images/achievements.jpg", // ✅ الصورة اللي هتظهر بدل النصوص
     },
 ];
 export const main = "/mnu/images/zerohunger.jpg";

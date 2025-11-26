@@ -6,10 +6,10 @@ export const PeaceData = [
         label: "University Policy",
         title: "University Policy Details",
         content: [
-            {
-                text: "",
-                pdf: ""
-            },
+            // {
+            //     text: "",
+            //     pdf: ""
+            // },
 
         ],
     },
@@ -28,7 +28,7 @@ export const PeaceData = [
     {
         id: "3",
         label: "Partnerships",
-        title: "",
+        title: "Partnerships",
         content: [
             // {
             //     text: "",
@@ -44,7 +44,7 @@ export const PeaceData = [
         id: "4",
         label: "Achievements",
         title: "University Achievements",
-        image: "/mnu/images/achievements.jpg", // ✅ الصورة اللي هتظهر بدل النصوص
+        // image: "/mnu/images/achievements.jpg", // ✅ الصورة اللي هتظهر بدل النصوص
     },
 ];
 export const main = "/mnu/images/peace.png";

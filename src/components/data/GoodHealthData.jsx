@@ -35,6 +35,14 @@ export const GoodHealthData = [
                 pdf: "/mnu/pdfs/Activities/SDG3/(2023-2024) University Activities and Initiatives for Promoting Good Health and Well-Being .pdf"
             },
             {
+                text: "(2023-2024) Community Health outrearch programs",
+                pdf: "/mnu/pdfs/Activities/SDG3/(2023-2024) Community Health outrearch programs .pdf"
+            },
+            {
+                text: "MNU Health Clinic Services Report (Academic Year 2023- 2024)",
+                pdf: "/mnu/pdfs/Activities/SDG3/MNU Health Clinic Services Report (Academic Year 2023- 2024).pdf"
+            },
+            {
                 text: "(2024–2025) University Activities and Initiatives for Promoting Good Health and Well-Being",
                 pdf: "/mnu/pdfs/Activities/SDG3/(2024–2025) University Activities and Initiatives for Promoting Good Health and Well-Being.pdf"
 
@@ -44,10 +52,12 @@ export const GoodHealthData = [
                 text: "Community Health outrearch programs (2023-2024)",
                 pdf: "/mnu/pdfs/Activities/SDG3/Community Health outrearch programs (2023-2024).pdf"
             },
+
             {
-                text: "(2023-2024) Community Health outrearch programs",
-                pdf: "/mnu/pdfs/Activities/SDG3/(2023-2024) Community Health outrearch programs .pdf"
+                text: "Recreational Sports Day",
+                pdf: "/mnu/pdfs/Activities/SDG3/Recreational Sports Day.pdf"
             },
+
         ],
     },
     {
@@ -69,8 +79,16 @@ export const GoodHealthData = [
         id: "4",
         label: "Achievements",
         title: "University Achievements",
-        image: "/mnu/images/achievements.jpg", // ✅ الصورة اللي هتظهر بدل النصوص
-    },
+        content: [
+            {
+                text: "2023-2024 SDG 3 report",
+                link: "/mnu/pdfs/achievements/SDG3/2023-2024 SDG 3 report.pdf"
+            },
+
+        ]
+
+
+    }
 ];
 
 export const main = "/mnu/images/goodhealth.png";

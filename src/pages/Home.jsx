@@ -1,6 +1,7 @@
 import { BookOpen } from "lucide-react";
 import { motion } from "framer-motion";
 import SustainabilityUnits from "../components/SustainabilityUnits";
+import PeekSlider from "../components/PeekSlider";
 
 export default function Home() {
     const green = "/mnu/images/green.PNG";
@@ -18,7 +19,7 @@ export default function Home() {
                 transition={{ duration: 1 }}
             >
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-2">
-                    <p className="text-center sm:text-left text-base sm:text-xl md:text-2xl max-[400px]:text-sm">
+                    <p className="text-center sm:text-left text-base sm:text-xl md:text-4xl max-[400px]:text-sm">
                         Sustainability <span className="text-mainColor">Development</span>
                     </p>
                     <span className="bg-green-100 text-green-700 text-xs sm:text-sm font-semibold px-3 py-1 rounded-full w-fit">
@@ -51,6 +52,8 @@ export default function Home() {
                     </div>
                 </div>
             </div>
+
+
 
             {/* ===== Section 2 ===== */}
             <div className="max-w-7xl mx-auto flex flex-col justify-center items-center gap-home-section-gap mb-10 px-2 sm:px-4">
@@ -93,7 +96,19 @@ export default function Home() {
                     </div>
                 </div>
             </div>
+            <div className="">
+                <PeekSlider
+                    images={[
+                        "/mnu/images/sliderimg1.jpeg",
+                        "/mnu/images/sliderimg2.jpeg",
+                        "/mnu/images/sliderimg3.jpeg",
+                        "/mnu/images/sliderimg4.jpeg",
+                        "/mnu/images/sliderimg5.jpeg",
+                        "/mnu/images/sliderimg6.jpeg",
 
+                    ]}
+                />
+            </div>
             {/* ===== Section 3 ===== */}
             <div className="max-w-7xl mx-auto flex flex-col items-center gap-home-section-gap mb-10 px-2 sm:px-4">
                 <h1 className="text-lg sm:text-xl md:text-2xl font-semibold text-center max-[400px]:text-base">
@@ -150,7 +165,7 @@ export default function Home() {
             </div>
 
             {/* ===== Section 4 - Report ===== */}
-            <div className="max-w-7xl mx-auto flex flex-col items-center gap-6 mb-10 px-2 sm:px-4">
+            {/* <div className="max-w-7xl mx-auto flex flex-col items-center gap-6 mb-10 px-2 sm:px-4">
                 <h1 className="text-lg sm:text-xl md:text-2xl font-semibold text-center max-[400px]:text-base">
                     Download <span className="text-mainColor">Report</span>
                 </h1>
@@ -178,7 +193,7 @@ export default function Home() {
                         Show File
                     </a>
                 </motion.div>
-            </div>
+            </div> */}
 
             {/* ===== Section 5 ===== */}
             <SustainabilityUnits />

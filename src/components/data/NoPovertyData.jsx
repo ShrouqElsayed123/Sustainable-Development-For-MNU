@@ -28,7 +28,7 @@ export const NoPovertyData = [
     {
         id: "3",
         label: "Partnerships",
-        title: "title",
+        title: "Partnerships",
         content: [
             // {
             //     text: "",
@@ -44,7 +44,7 @@ export const NoPovertyData = [
         id: "4",
         label: "Achievements",
         title: "University Achievements",
-        image: "/mnu/images/achievements.jpg", // ✅ الصورة اللي هتظهر بدل النصوص
+        // image: "/mnu/images/achievements.jpg", // ✅ الصورة اللي هتظهر بدل النصوص
     },
 ];
 export const main = "/mnu/images/nopoverty.png";
