@@ -105,6 +105,13 @@ export default function Home() {
                         "/mnu/images/sliderimg4.jpeg",
                         "/mnu/images/sliderimg5.jpeg",
                         "/mnu/images/sliderimg6.jpeg",
+                        "/mnu/images/sliderimg7.jpeg",
+                        "/mnu/images/sliderimg8.jpeg",
+                        "/mnu/images/sliderimg9.jpeg",
+                        "/mnu/images/sliderimg10.jpeg",
+                        "/mnu/images/sliderimg11.jpeg",
+                        "/mnu/images/sliderimg12.jpeg",
+                        "/mnu/images/sliderimg13.jpeg",
 
                     ]}
                 />
